@@ -1,0 +1,687 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Portfolio</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		body {
+			font:400 15px/1.8 Lato, sans-serif;
+			color: #777;
+		}
+		h3, h4 {
+			margin: 10px, 0, 30px, 0;
+			letter-spacing: 10px;
+			font-size: 20px;
+			color: #111
+		}
+		h5 {
+			font-size:30px;
+		}
+		.container {
+			padding: 80px 120px;
+		}
+		.person {
+			border: 10px solid transparent;
+			margin-bottom: 25px;
+			/* width: 80%;
+			height: 80%; */
+			opacity: 0.7;
+		}
+		.bg-1 {
+			background: #2d2d30;
+			color: #bdbdbd;
+		}
+		.bg-1 h3 {
+			color: #fff;
+		}
+		.bg-1 p {
+			font-style: italic;
+		}
+		.list-group-item:first-child {
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+		}
+		.thumbnail {
+			padding: 0 0 15px 0;
+			border: none;
+			border-radius: 0;
+		}
+		.thumbnail p {
+			margin-top: 15px;
+			color: #555;
+		}
+		.btn {
+			padding: 10px 20px;
+			background-color: #333;
+			color: #f1f1f1;
+			border-radius: 0;
+			transition: .2s;
+		}
+		.btn:hover, .btn:focus {
+			border: 1px solid #333;
+			background-color: #fff;
+			color: #000;
+		}
+		.modal-header, .modal-body {
+			padding: 40px 50px;
+		}
+		.nav-tabs li a {
+			color: #fff;
+		}
+		#listmap {
+			width: 1200px;
+			height: 800px;
+			margin: auto;	
+		}
+		.navbar {
+			font-family: Monterrat, sans-serif;
+			margin-bottom: 0;
+			background-color: #5f5f5f;
+			border: 0;
+			font-size: 11px !important;
+			letter-spacing: 4px;
+			opacity: 0.9;
+		}
+		.navbar li a, .navbar .navbar-brand {
+			color: #fff !important;
+		}
+		.navbar-nav li a:hover {
+			color: #fff !important;
+		}
+		.navbar-nav li.active a {
+			color: #fff !important;
+			background-color: #29292c !important;
+		}
+		.navbar-default .navbar-toggle {
+			background-color: #003458;
+		}
+		.footer {
+			background-color: #2d2d30;
+			color: #f5f5f5;
+			padding: 32px;
+		}
+		.footer a {
+			color: #f5f5f5;
+		}
+		.footer a:hover {
+			color: #777;
+			text-decoration: none;
+		}
+		.form-control {
+			border-radius: 0;
+		}
+		textarea {
+			resize: none;
+		}
+	</style>
+	<STYLE TYPE="text/css">
+		table {font-size: 20pt;}
+	</STYLE>
+	<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7701a7cf59b44b40a2c4bcb75772cf42 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<!-- 1. navigation bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+				data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#myPage" class="navbar-brand"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				
+				<ul class="nav navbar-nav navbar-right">
+<!-- 					<li><a href="#myPage">HOME</a></li> -->
+					<li><a href="#project">PROJECT</a></li>
+					<li><a href="#info">INFO</a></li>
+					<li><a href="#wordcloud">VIEW</a></li>
+					<li><a href="#listmap">MAP</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div id="project" class="container text-center">
+		<h3>PROJECT</h3>
+		<br>
+		<h5>제주도 맛집이래서 찾아간게 죄는 아니잖아!!!</h5>
+		<img src="./images/jejudo.png" width="100%" align="center">
+		<br><br>
+	</div>
+	<!-- 3. band section -->
+	<div id="info" class="bg-1">
+		<div class="container text-center">
+			<h3>INFO</h3>
+			<p></p>
+			<p align="left">
+				1. 객관적인 리뷰 평가<br>
+				제주도 여행 계획을 짜기위해 여행지를 검색하고 리뷰들을 살펴보다보니 별점은 높지만 부정적인 내용이거나 별점은 낮지만 긍적적인 내용으로 별점과 내용이 맞지 않는 리뷰들이 다수 있었다. 객관적인 리뷰 평가를 위해 별점에 상관없이 리뷰 내용만으로 긍정/부정을 평가 해보려고 한다.<br>
+				네이버 플레이스에서 학습용 리뷰 데이터셋(전국, 제주도 지역 제외)과 검증용 리뷰 데이터셋(제주도 지역)을 수집하고 전처리 후 Keras를 통해 학습용 데이터셋으로 학습 시킨 후 검증용 데이터셋을 긍정/부정 리뷰로 판단하였다.<br>
+				<br>
+				2. 수 많은 긍정 리뷰 중 부정 리뷰 활용<br>
+				
+				판단 결과를 살펴보니 평균적으로 약 90%는 긍정 리뷰, 약 10%는 부정 리뷰로 나타났다. 그리고 부정 리뷰의 비중이 가장 큰 경우는 약 28%를 나타냈다.<br>
+				여행지를 검색하다보면 추천 사이트나 블로그, 리뷰는 많았지만 비추천 관련 정보는 찾기가 힘들었다. 따라서 부정적인 리뷰의 비중이 큰  가게들을 리스트로 작성하여 나타냈다. 여행 계획을 세우는 사람들에게 정보를 제공하려고 한다.<br>
+				또한 여행객들 뿐만 아니라 사장님들에게도 고객들이 부정적으로 생각했던 점들을 워드클라우드를 통해 개선점을 제공한다.<br></p>
+			<img src="./images/돈사돈.png" align="center">
+		</div>
+	</div>
+	<div id='wordcloud' class="container text-center">
+		<h3>WORDCLOUD</h3>
+		<br>
+		<div align="center" width='100%'>
+			<table>
+				<tr>
+					<td>
+						<button class="btn" onclick="toggleImgFood()">음식점</button>
+						<button class="btn" onclick="toggleImgCafe()">카  페</button>
+						<button class="btn" onclick="toggleImgInn()">숙  소</button>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"><br>긍정 리뷰</td>
+					<td align="center"><br>부정 리뷰</td>
+				</tr>
+				<tr>
+
+					<td><br><img id="wordcloud_img1" src="./images/nothing.png" width="100%"></td>
+					<td><br><img id="wordcloud_img2" src="./images/nothing.png" width="100%"></td>
+				</tr>
+			</table>
+			<script>
+			    function toggleImgFood() {
+			      document.getElementById("wordcloud_img1").src = "./images/wordcloud_pos_food.png";
+			      document.getElementById("wordcloud_img2").src = "./images/wordcloud_neg_food.png";
+			    }
+			    function toggleImgInn() {
+			      document.getElementById("wordcloud_img1").src = "./images/wordcloud_pos_inn.png";
+			      document.getElementById("wordcloud_img2").src = "./images/wordcloud_neg_inn.png";
+			    }
+			    
+			</script>
+
+		</div>
+	</div>
+	<!-- 4. Tour -->
+	<div id="tour" class="bg-1">
+		<div class="container">
+			<h3 class="text-center"></h3>
+			<p class="text-center">
+			</p>
+			
+			<!-- <ul class="list-group">
+				<li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
+				<li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
+				<li class="list-group-item">November <span class="badge">3</span></li>
+			</ul> -->
+			<!-- <div class="row text-center">
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./images/paris.jpg" alt="Paris" width="400" height="300">
+						<p><strong>Paris</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./images/newyork.jpg" alt="New York" width="400" height="300">
+						<p><strong>New York</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./images/sanfran.jpg" alt="San Francisco" width="400" height="300">
+						<p><strong>San Francisco</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<!-- 7. google map : https://cloud.google.com/maps-platform/ -->
+	<div id="listmap" class="container">
+		<h3 class="text-center">LIST ON THE MAP</h3>
+		<div class="folium-map" id="map_7701a7cf59b44b40a2c4bcb75772cf42" ></div>
+	</div>
+	
+
+	<!-- 8. footer -->
+	<footer class="text-center">
+		<a href="#myPage" class="up-arrow" data-toggle="tooltip" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a><br><br>
+		<p>GitHub
+			<a href="https://github.com/eunsu29/eunsu29.github.io" data-toggle="tooltip" title="Welcome...">
+				https://github.com/eunsu29/eunsu29.github.io
+			</a>
+		</p>
+	</footer>
+	
+	<script>
+		$(function() {
+			// Tooltip초기화
+			$('[data-toggle="tooltip"]').tooltip();
+
+			// navbar와 footer를 부드럽게 scrolling
+			$(".navbar a, footer a[href='#myPage']").on('click', function() {
+				if(this.hash !== "") {
+					event.preventDefault(); // 이벤트 발생을 제거
+					var hash = this.hash;
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 900, function() {
+						window.location.hash = hash;
+					})
+				}
+			})
+		})
+	</script>
+</body>
+<script>    
+    
+            var map_7701a7cf59b44b40a2c4bcb75772cf42 = L.map(
+                "map_7701a7cf59b44b40a2c4bcb75772cf42",
+                {
+                    center: [33.42528063571429, 126.56479685714285],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bbbc1c5ea91d4de89d8d61318b65ffb6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var marker_5a822390be1c43e2913c5126fa354b28 = L.marker(
+                [33.2584957, 126.406028],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_d2d0f85a4dca47d0b8a4e0144db97f75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5a822390be1c43e2913c5126fa354b28.setIcon(icon_d2d0f85a4dca47d0b8a4e0144db97f75);
+        
+    
+        var popup_2bd419d3b6be434da04e8658caf26982 = L.popup({});
+
+        
+            var html_b2a0cfec7a9d44f3bb5bf986adfa5f87 = $(`<div id="html_b2a0cfec7a9d44f3bb5bf986adfa5f87" style="width: 100.0%; height: 100.0%;">국수바다본점</div>`)[0];
+            popup_2bd419d3b6be434da04e8658caf26982.setContent(html_b2a0cfec7a9d44f3bb5bf986adfa5f87);
+        
+
+        marker_5a822390be1c43e2913c5126fa354b28.bindPopup(popup_2bd419d3b6be434da04e8658caf26982)
+        ;
+
+        
+    
+    
+            var marker_4c28dfc98fb34ef4aae917caea63d733 = L.marker(
+                [33.4789132, 126.464032],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_b2baef7088cf49e58994ac7c82a81898 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4c28dfc98fb34ef4aae917caea63d733.setIcon(icon_b2baef7088cf49e58994ac7c82a81898);
+        
+    
+        var popup_0babcac9dc5441f785b84b0463315da4 = L.popup({});
+
+        
+            var html_0ed7c196df6447f8a1897e89fdbeaea4 = $(`<div id="html_0ed7c196df6447f8a1897e89fdbeaea4" style="width: 100.0%; height: 100.0%;">돈사돈</div>`)[0];
+            popup_0babcac9dc5441f785b84b0463315da4.setContent(html_0ed7c196df6447f8a1897e89fdbeaea4);
+        
+
+        marker_4c28dfc98fb34ef4aae917caea63d733.bindPopup(popup_0babcac9dc5441f785b84b0463315da4)
+        ;
+
+        
+    
+    
+            var marker_fabba39c944640549437b1f533e01dea = L.marker(
+                [33.4258466, 126.65706200000001],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_608059a776354ed3a698410a252c53cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fabba39c944640549437b1f533e01dea.setIcon(icon_608059a776354ed3a698410a252c53cd);
+        
+    
+        var popup_7161809fd57c475598abb68965c55c6c = L.popup({});
+
+        
+            var html_e7966fa00a57457fb08e66541de8f1ca = $(`<div id="html_e7966fa00a57457fb08e66541de8f1ca" style="width: 100.0%; height: 100.0%;">돌카롱 사려니숲길점</div>`)[0];
+            popup_7161809fd57c475598abb68965c55c6c.setContent(html_e7966fa00a57457fb08e66541de8f1ca);
+        
+
+        marker_fabba39c944640549437b1f533e01dea.bindPopup(popup_7161809fd57c475598abb68965c55c6c)
+        ;
+
+        
+    
+    
+            var marker_99227c94a3f048d5add0d18f46c101bf = L.marker(
+                [33.5122647, 126.52625],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_2564fa19262641b8bf0b866566e671ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_99227c94a3f048d5add0d18f46c101bf.setIcon(icon_2564fa19262641b8bf0b866566e671ef);
+        
+    
+        var popup_0a66c6d51fe744e999736cc7cf83f11f = L.popup({});
+
+        
+            var html_3b015b25ca57493b95169e894fdc9d77 = $(`<div id="html_3b015b25ca57493b95169e894fdc9d77" style="width: 100.0%; height: 100.0%;">동문올레수산</div>`)[0];
+            popup_0a66c6d51fe744e999736cc7cf83f11f.setContent(html_3b015b25ca57493b95169e894fdc9d77);
+        
+
+        marker_99227c94a3f048d5add0d18f46c101bf.bindPopup(popup_0a66c6d51fe744e999736cc7cf83f11f)
+        ;
+
+        
+    
+    
+            var marker_24f91866a01045588ff21df89d10483a = L.marker(
+                [33.237406, 126.436771],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_f4e7e24c6f624014b529ced742e266ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_24f91866a01045588ff21df89d10483a.setIcon(icon_f4e7e24c6f624014b529ced742e266ca);
+        
+    
+        var popup_887350c8e39f4b97934343d9cfc884cd = L.popup({});
+
+        
+            var html_c96434ca12d9445c8087ef1649577d33 = $(`<div id="html_c96434ca12d9445c8087ef1649577d33" style="width: 100.0%; height: 100.0%;">바다다</div>`)[0];
+            popup_887350c8e39f4b97934343d9cfc884cd.setContent(html_c96434ca12d9445c8087ef1649577d33);
+        
+
+        marker_24f91866a01045588ff21df89d10483a.bindPopup(popup_887350c8e39f4b97934343d9cfc884cd)
+        ;
+
+        
+    
+    
+            var marker_2e467b3477904c71b9f61f629cf1d024 = L.marker(
+                [33.4691965, 126.91990600000001],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_64ef01cfbd2347e9adb69fbf4b309447 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2e467b3477904c71b9f61f629cf1d024.setIcon(icon_64ef01cfbd2347e9adb69fbf4b309447);
+        
+    
+        var popup_8c78d7a7b1824626afbdb926fed7b6bc = L.popup({});
+
+        
+            var html_284687a9c5cf438fbe05611d4976e703 = $(`<div id="html_284687a9c5cf438fbe05611d4976e703" style="width: 100.0%; height: 100.0%;">복자씨연탄구이</div>`)[0];
+            popup_8c78d7a7b1824626afbdb926fed7b6bc.setContent(html_284687a9c5cf438fbe05611d4976e703);
+        
+
+        marker_2e467b3477904c71b9f61f629cf1d024.bindPopup(popup_8c78d7a7b1824626afbdb926fed7b6bc)
+        ;
+
+        
+    
+    
+            var marker_8a14cb5a82b845ea839742e438f93c8f = L.marker(
+                [33.3966125, 126.242484],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_3aed8ead407a4c63bdf1ee2268683a51 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8a14cb5a82b845ea839742e438f93c8f.setIcon(icon_3aed8ead407a4c63bdf1ee2268683a51);
+        
+    
+        var popup_a473d4df6bed4a298fd35ed9d5736fca = L.popup({});
+
+        
+            var html_0a08bf51dd7a4bd694d91977ff95b7a5 = $(`<div id="html_0a08bf51dd7a4bd694d91977ff95b7a5" style="width: 100.0%; height: 100.0%;">수우동</div>`)[0];
+            popup_a473d4df6bed4a298fd35ed9d5736fca.setContent(html_0a08bf51dd7a4bd694d91977ff95b7a5);
+        
+
+        marker_8a14cb5a82b845ea839742e438f93c8f.bindPopup(popup_a473d4df6bed4a298fd35ed9d5736fca)
+        ;
+
+        
+    
+    
+            var marker_974d553ceb8d495a8ead85f443e356e2 = L.marker(
+                [33.5169704, 126.526096],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_7f255ad7dcdb4cb482621e13b74a9858 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_974d553ceb8d495a8ead85f443e356e2.setIcon(icon_7f255ad7dcdb4cb482621e13b74a9858);
+        
+    
+        var popup_aad9d17ff5604652be5adc8d2d72ecea = L.popup({});
+
+        
+            var html_1bcba1653dd04a70b55fd19857d986f3 = $(`<div id="html_1bcba1653dd04a70b55fd19857d986f3" style="width: 100.0%; height: 100.0%;">앙뚜아네트</div>`)[0];
+            popup_aad9d17ff5604652be5adc8d2d72ecea.setContent(html_1bcba1653dd04a70b55fd19857d986f3);
+        
+
+        marker_974d553ceb8d495a8ead85f443e356e2.bindPopup(popup_aad9d17ff5604652be5adc8d2d72ecea)
+        ;
+
+        
+    
+    
+            var marker_a9d3788ca3fa43d5beb86c2103a177c5 = L.marker(
+                [33.508159, 126.53244],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_4d2cde73865d4466970dae39b7b164c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a9d3788ca3fa43d5beb86c2103a177c5.setIcon(icon_4d2cde73865d4466970dae39b7b164c2);
+        
+    
+        var popup_8eac131aa3e8451ba39c6b60975566c1 = L.popup({});
+
+        
+            var html_eae8d09c894e4de4af4c1938b5b29f34 = $(`<div id="html_eae8d09c894e4de4af4c1938b5b29f34" style="width: 100.0%; height: 100.0%;">자매국수</div>`)[0];
+            popup_8eac131aa3e8451ba39c6b60975566c1.setContent(html_eae8d09c894e4de4af4c1938b5b29f34);
+        
+
+        marker_a9d3788ca3fa43d5beb86c2103a177c5.bindPopup(popup_8eac131aa3e8451ba39c6b60975566c1)
+        ;
+
+        
+    
+    
+            var marker_bd1b1690688e4558966b01f027464290 = L.marker(
+                [33.460684, 126.932575],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_badda328bade424cafa1e0ac0dce2514 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bd1b1690688e4558966b01f027464290.setIcon(icon_badda328bade424cafa1e0ac0dce2514);
+        
+    
+        var popup_e71eb5ef810845bda3a8d1cc84864589 = L.popup({});
+
+        
+            var html_03ad21ce70dc4f13b6d5fc7ccef70041 = $(`<div id="html_03ad21ce70dc4f13b6d5fc7ccef70041" style="width: 100.0%; height: 100.0%;">전망좋은횟집</div>`)[0];
+            popup_e71eb5ef810845bda3a8d1cc84864589.setContent(html_03ad21ce70dc4f13b6d5fc7ccef70041);
+        
+
+        marker_bd1b1690688e4558966b01f027464290.bindPopup(popup_e71eb5ef810845bda3a8d1cc84864589)
+        ;
+
+        
+    
+    
+            var marker_606fd7d6f3d448b6b3b03a633490f924 = L.marker(
+                [33.4675794, 126.339047],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_5ca5c9ce744841c09a0e61c2970a3d2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_606fd7d6f3d448b6b3b03a633490f924.setIcon(icon_5ca5c9ce744841c09a0e61c2970a3d2b);
+        
+    
+        var popup_ece4e13111624ef69db89fffa516f88d = L.popup({});
+
+        
+            var html_d458e28d7fa54ab383b271f60fa60f02 = $(`<div id="html_d458e28d7fa54ab383b271f60fa60f02" style="width: 100.0%; height: 100.0%;">제주 김만복 애월점</div>`)[0];
+            popup_ece4e13111624ef69db89fffa516f88d.setContent(html_d458e28d7fa54ab383b271f60fa60f02);
+        
+
+        marker_606fd7d6f3d448b6b3b03a633490f924.bindPopup(popup_ece4e13111624ef69db89fffa516f88d)
+        ;
+
+        
+    
+    
+            var marker_8f046259befc410393743982ce536f1b = L.marker(
+                [33.4971028, 126.50849099999999],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_d842ad65529e4940a2b05c45ee1b3022 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8f046259befc410393743982ce536f1b.setIcon(icon_d842ad65529e4940a2b05c45ee1b3022);
+        
+    
+        var popup_106248dc083445f2b7189235153649f4 = L.popup({});
+
+        
+            var html_fc7f3977648d49da918f9481e3e470ff = $(`<div id="html_fc7f3977648d49da918f9481e3e470ff" style="width: 100.0%; height: 100.0%;">제주김만복 본점</div>`)[0];
+            popup_106248dc083445f2b7189235153649f4.setContent(html_fc7f3977648d49da918f9481e3e470ff);
+        
+
+        marker_8f046259befc410393743982ce536f1b.bindPopup(popup_106248dc083445f2b7189235153649f4)
+        ;
+
+        
+    
+    
+            var marker_f79910879cba4144b4ca48b0d1fa09ae = L.marker(
+                [33.2324818, 126.50628],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_6f9cfea062d6413c9c68b18e4e94c2c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f79910879cba4144b4ca48b0d1fa09ae.setIcon(icon_6f9cfea062d6413c9c68b18e4e94c2c8);
+        
+    
+        var popup_e963fd9d9ad9498c96cdbee4e37a21ea = L.popup({});
+
+        
+            var html_5b11983460024970b62c6e83092c3b1c = $(`<div id="html_5b11983460024970b62c6e83092c3b1c" style="width: 100.0%; height: 100.0%;">제주김만복 서귀포점</div>`)[0];
+            popup_e963fd9d9ad9498c96cdbee4e37a21ea.setContent(html_5b11983460024970b62c6e83092c3b1c);
+        
+
+        marker_f79910879cba4144b4ca48b0d1fa09ae.bindPopup(popup_e963fd9d9ad9498c96cdbee4e37a21ea)
+        ;
+
+        
+    
+    
+            var marker_a0b524c8034e4305b670efc80ff1e1c6 = L.marker(
+                [33.4922163, 126.90969399999999],
+                {}
+            ).addTo(map_7701a7cf59b44b40a2c4bcb75772cf42);
+        
+    
+            var icon_c3dafa2d62a64cb6a4206669102ae324 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a0b524c8034e4305b670efc80ff1e1c6.setIcon(icon_c3dafa2d62a64cb6a4206669102ae324);
+        
+    
+        var popup_daab09d75eb9409b844abe428f7a4ad3 = L.popup({});
+
+        
+            var html_460ea144792044b9a08b67efeea632be = $(`<div id="html_460ea144792044b9a08b67efeea632be" style="width: 100.0%; height: 100.0%;">해월정</div>`)[0];
+            popup_daab09d75eb9409b844abe428f7a4ad3.setContent(html_460ea144792044b9a08b67efeea632be);
+        
+
+        marker_a0b524c8034e4305b670efc80ff1e1c6.bindPopup(popup_daab09d75eb9409b844abe428f7a4ad3)
+        ;
+
+        
+    
+</script>
+</html>
