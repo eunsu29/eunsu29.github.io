@@ -25,7 +25,7 @@
 			color: #111
 		}
 		h5 {
-			font-size:30px;
+			font-size:25px;
 		}
 		.container {
 			padding: 80px 120px;
@@ -72,16 +72,37 @@
 			background-color: #fff;
 			color: #000;
 		}
-		.modal-header, .modal-body {
+		.list_btn {
+			width: 100%;
+			padding: 10px 20px;
+			background-color: #333;
+			color: #f1f1f1;
+			border-radius: 0;
+		}
+		.list_food {
+			height: 530px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		.btn_food {
+			float: left;
+			border-collapse: separate;
+			border-spacing: 5px;
+		}
+		.table_food {
+			height: 530px;
+			overflow-y: scroll;
+		}
+		.modal-header {
+			padding: 30px 30px;
+			height: 10px;
+		}
+		.modal-body {
 			padding: 40px 50px;
+			height: 600px;
 		}
 		.nav-tabs li a {
 			color: #fff;
-		}
-		#listmap {
-			width: 1200px;
-			height: 800px;
-			margin: auto;	
 		}
 		.navbar {
 			font-family: Monterrat, sans-serif;
@@ -125,7 +146,30 @@
 		}
 	</style>
 	<STYLE TYPE="text/css">
-		table {font-size: 20pt;}
+		table.type01 {
+		    border-collapse: separate;
+		    border-spacing: 1px;
+		    text-align: left;
+		    line-height: 1.5;
+		    border-top: 1px solid #ccc;
+		    margin: 20px 10px;
+		    width: 100%;
+		}
+		table.type01 th {
+		    width: 150px;
+		    padding: 10px;
+		    font-weight: bold;
+		    text-align: center;
+		    vertical-align: center;
+		    border-bottom: 1px solid #ccc;
+		    background: #efefef;
+		}
+		table.type01 td {
+		    width: 350px;
+		    padding: 10px;
+		    vertical-align: top;
+		    border-bottom: 1px solid #ccc;
+		}
 	</STYLE>
 	<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
@@ -133,10 +177,18 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_7701a7cf59b44b40a2c4bcb75772cf42 {
+                #map_7701a7cf59b44b40a2c4bcb75772cf42 { /*음식점*/
                     position: relative;
                     width: 100.0%;
-                    height: 100.0%;
+                    height: 60.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+
+                #map_e43f596dd2174b7d80a36a56d9b3f9f3 { /*숙소*/
+                    position: relative;
+                    width: 100.0%;
+                    height: 60.0%;
                     left: 0.0%;
                     top: 0.0%;
                 }
@@ -155,15 +207,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#myPage" class="navbar-brand"></a>
+				<a href="#project" class="navbar-brand"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				
 				<ul class="nav navbar-nav navbar-right">
-<!-- 					<li><a href="#myPage">HOME</a></li> -->
 					<li><a href="#project">PROJECT</a></li>
 					<li><a href="#info">INFO</a></li>
-					<li><a href="#wordcloud">VIEW</a></li>
+					<li><a href="#wordcloud">WORDCLOUD</a></li>
+					<li><a href="#review">REVIEW</a></li>
 					<li><a href="#listmap">MAP</a></li>
 				</ul>
 			</div>
@@ -172,7 +224,6 @@
 	
 	<div id="project" class="container text-center">
 		<h3>PROJECT</h3>
-		<br>
 		<h5>제주도 맛집이래서 찾아간게 죄는 아니잖아!!!</h5>
 		<img src="./images/jejudo.png" width="100%" align="center">
 		<br><br>
@@ -181,7 +232,7 @@
 	<div id="info" class="bg-1">
 		<div class="container text-center">
 			<h3>INFO</h3>
-			<p></p>
+			<br>
 			<p align="left">
 				1. 객관적인 리뷰 평가<br>
 				제주도 여행 계획을 짜기위해 여행지를 검색하고 리뷰들을 살펴보다보니 별점은 높지만 부정적인 내용이거나 별점은 낮지만 긍적적인 내용으로 별점과 내용이 맞지 않는 리뷰들이 다수 있었다. 객관적인 리뷰 평가를 위해 별점에 상관없이 리뷰 내용만으로 긍정/부정을 평가 해보려고 한다.<br>
@@ -191,7 +242,7 @@
 				
 				판단 결과를 살펴보니 평균적으로 약 90%는 긍정 리뷰, 약 10%는 부정 리뷰로 나타났다. 그리고 부정 리뷰의 비중이 가장 큰 경우는 약 28%를 나타냈다.<br>
 				여행지를 검색하다보면 추천 사이트나 블로그, 리뷰는 많았지만 비추천 관련 정보는 찾기가 힘들었다. 따라서 부정적인 리뷰의 비중이 큰  가게들을 리스트로 작성하여 나타냈다. 여행 계획을 세우는 사람들에게 정보를 제공하려고 한다.<br>
-				또한 여행객들 뿐만 아니라 사장님들에게도 고객들이 부정적으로 생각했던 점들을 워드클라우드를 통해 개선점을 제공한다.<br></p>
+				또한 고객들이 부정적으로 생각했던 점들을 보여줌으로써 사장님들에게도 정보를 제공한다.<br></p>
 			<img src="./images/돈사돈.png" align="center">
 		</div>
 	</div>
@@ -208,13 +259,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="center"><br>긍정 리뷰</td>
-					<td align="center"><br>부정 리뷰</td>
+					<td align="center"><br><h5>긍정 리뷰</h5></td>
+					<td align="center"><br><h5>부정 리뷰</h5></td>
 				</tr>
 				<tr>
 
-					<td><br><img id="wordcloud_img1" src="./images/nothing.png" width="100%"></td>
-					<td><br><img id="wordcloud_img2" src="./images/nothing.png" width="100%"></td>
+					<td><br><img id="wordcloud_img1" src="./images/wordcloud_pos_food.png" width="100%"></td>
+					<td><br><img id="wordcloud_img2" src="./images/wordcloud_neg_food.png" width="100%"></td>
 				</tr>
 			</table>
 			<script>
@@ -232,56 +283,617 @@
 		</div>
 	</div>
 	<!-- 4. Tour -->
-	<div id="tour" class="bg-1">
-		<div class="container">
-			<h3 class="text-center"></h3>
+	<div id="review" class="bg-1">
+		<div class="container text-center">
+			<h3 class="text-center">LIST AND REVIEW</h3>
 			<p class="text-center">
 			</p>
-			
-			<!-- <ul class="list-group">
-				<li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
-				<li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
-				<li class="list-group-item">November <span class="badge">3</span></li>
-			</ul> -->
-			<!-- <div class="row text-center">
+			<div class="row text-center">
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="./images/paris.jpg" alt="Paris" width="400" height="300">
-						<p><strong>Paris</strong></p>
-						<p>Friday 27 November 2020</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<p><strong>음식점</strong></p>
+						<p>총 11곳</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal1">Buy Tickets</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="./images/newyork.jpg" alt="New York" width="400" height="300">
 						<p><strong>New York</strong></p>
 						<p>Friday 27 November 2020</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<button class="btn" data-toggle="modal" data-target="#myModal2">Buy Tickets</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="./images/sanfran.jpg" alt="San Francisco" width="400" height="300">
 						<p><strong>San Francisco</strong></p>
 						<p>Friday 27 November 2020</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<button class="btn" data-toggle="modal" data-target="#myModal3">Buy Tickets</button>
 					</div>
 				</div>
-			</div> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- 5. Modal -->
+	<div class="modal fade" id="myModal1" role="dialog">
+		<div class="modal-dialog" style="width: 1000px">
+			<!-- momdal content 정의 -->
+			<div class="modal-content">
+				<!-- 1. modal header -->
+				<div class="modal-header">
+					<p style="font-size: 20px">
+						<button class="close" type="button" data-dismiss="modal">
+						x
+						</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;음식점
+					</p>
+				</div>
+				<!-- 2. modal body -->
+				<div class="modal-body">
+					<div class="form-group list_food col-sm-3">
+						<table class="btn_food">
+							<tr>
+								<td><a href="#list_food01"><button class="list_btn">국수바다본점</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food02"><button class="list_btn">돈사돈</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food03"><button class="list_btn">동문올레수산</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food04"><button class="list_btn">복자씨연탄구이</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food05"><button class="list_btn">수우동</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food06"><button class="list_btn">자매국수</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food07"><button class="list_btn">전망좋은횟집</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food08"><button class="list_btn">제주 김만복 애월점</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food09"><button class="list_btn">제주김만복 본점</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food10"><button class="list_btn">제주김만복 서귀포점</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_food11"><button class="list_btn">해월정</button></a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="form-group table_food col-sm-9">
+						<table id="list_food01" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>국수바다본점</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>냄새남, 느끼하다, 맛없음, 맛이 변함</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>위생불량, 재방문 X, 최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">국물에서 돼지 냄새 심해요
+									<br> 불친절
+									<br>고기국수 먹었는데 느끼하고 간이 딱
+									<br>고기국수 중 최악입니다 진짜
+									<br> 비위생적
+									<br> 가격이 비싸서 다시는 가고싶은
+									<br>모르겠고 고기국수 노맛
+									<br> 상당히 불친절함
+									<br>점도아까움
+									<br>먹은 제주음식중최악
+								</td>
+							</tr>
+						</table>
+						<table id="list_food02" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>돈사돈</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>냄새남, 짜다, 느끼하다, 맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 주문누락, 직원들 잡담 심함, 주문강요, 대기시간 김, 식당 비좁음, 최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">고기 양이 적다고 하셨지만 결국
+									<br> 비싼돈주고 그런
+									<br>고기가 그 비싼 가격에 적당한
+									<br>우린 음식을 남겼고
+									<br>그냥 모든게 최악임
+									<br>음식점 중 최악입니다
+									<br>직원분이 너무 불친절 하셨습니다
+									<br>우리가족앞에서 계속 잡담함
+									<br>갔는데 직원들 불친절함 필요한거 갔다달라하면
+									<br>사장님 정말 불친절하십니다 자기들이 인원보고
+								</td>
+							</tr>
+						</table>
+						<table id="list_food03" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>동문올레수산</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>맛없음, 미리 준비해 오래된 음식</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>식당 내 시끄러움, 최악, 재방문 X, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">최악이다
+									<br>불친절의 끝
+									<br>맛도 양도 최악 
+									<br>꺼내고 대실망
+									<br>완전 맛없어요 시끄러워 정신없어요
+									<br>포장해놓은지 오래되서 말라있음 특히
+									<br>매운탕은 완전 맛없어요 시끄러워 정신없어요
+								</td>
+							</tr>
+						</table>
+						<table id="list_food04" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>복자씨연탄구이</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>느끼하다, 맛이 변함</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 직원 대응 미흡</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">생각보다 너무 느끼하고 비계가 많았어요
+									<br>점도 아깝습니다
+									<br>것에서부터 맛이 달라졌으며
+									<br>납품하는 업체때문이다며 핑계되고 절대
+									<br>이번년도엔 굉장히 실망스러웠습니다 기본적으로
+									<br>돈내고 나온게 아깝네여
+									<br>밑반찬도 너무 적고 계란찜에는 물을
+								</td>
+							</tr>
+						</table>
+						<table id="list_food05" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>수우동</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>짜다, 느끼하다, 간이 약하다</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>직원들 잡담 심함, 재방문 X</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">짜 평범해요냉우동은 너무 짜고 면발기대했는데
+									<br>돈까스는 생각보다 밋밋 했어요  우동에
+									<br>우동은 너무 짜요 레몬짜서 먹으라고
+									<br>기다린 시간 아까워서 다른분들도 기다렸다
+									<br>비해 너무 비쌈 음식맛은 그냥
+									<br>바삭하니 냉우동에 적셔먹음존맛
+									<br>마스크 안쓰고 잡담너무 심해요
+									<br>돈까스는 평범하고 느끼함
+									<br>대비 가격이 비쌉니다 혼밥세트의 돈가스와
+									<br>구지 제주도까지가서 비싼우동을 시간낭비하며
+								</td>
+							</tr>
+						</table>
+						<table id="list_food06" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>자매국수</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>냄새남, 짜다, 맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>식당 비좁음, 재방문 X, 식당 내 시끄러움, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">멸치국수 또한 남겼고 아감발 
+									<br>안나요 약은 적고 직원분이 불친절해요
+									<br>돼지냄새는 안나요
+									<br>맛이 너무 짜요 
+									<br>먹고나면 돈 아깝다는 생각이 드는
+									<br>주차시설도없구 불친절
+									<br>본점가봤다가 너무 맛없고 양도 적어서
+									<br>육수 짜고 맛없어요
+									<br>시장통에서 먹는것처럼 시끄러웠고 실내온도 관리가
+									<br> 양 적어요
+								</td>
+							</tr>
+						</table>
+						<table id="list_food07" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>전망좋은횟집</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>짜다, 조미료맛, 맛없음, 비리다, 쓰다</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>식당 내 시끄러움, 재방문 X, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2"> 결국 부족해서 식사로 오분작해물뚝배기랑
+									<br>귀찮게 인증받고 남겨요
+									<br>정말 맛없어요
+									<br> 매운탕은 조미료맛만 강함
+									<br>가격은 드럽게 비싸고
+									<br>점도 아까워요
+									<br>시켰는데 너무 맛없고 서울보다도 신선도가
+									<br>음식도 없고 시끄럽고 엄청 짜증났어요
+									<br>짠맛 한치와 쓴맛 채소로 만든
+									<br>저거 갖다주는 창렬함
+								</td>
+							</tr>
+						</table>
+						<table id="list_food08" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>제주 김만복 애월점</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>짜다, 맛없음, 간이 약하다</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">너무 비싸요 우동이 
+									<br>비싸요 
+									<br> 비싸요
+									<br>전복죽은 본죽보다맛없고 단무지없이 졸싱거워서
+									<br>라면 너무 짜요
+									<br>그나마 덜 아까움
+									<br>단무지없이 졸싱거워서 오징어무침이 신의한수
+								</td>
+							</tr>
+						</table>
+						<table id="list_food09" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>제주김만복 본점</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>맛없음, 간이 약하다</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">알바생넘 감정없는 불친절한 느낌이 별루였네요
+									<br>가봤는데 양도 적고 맛도 밍밍
+									<br>말라있는 밥알 맛없어 남은 김밥
+									<br>비해 가격은 비쌈
+									<br>맛없음 제주도에서 먹었던
+									<br>직원분이 너무 불친절하네요 포장했는데 오징어국물이
+									<br>맛없다고 할 수가
+									<br>니맛도 내맛도아닌 무맛이네요
+									<br>볶은밥이라는데 가격도 비싸네요
+									<br>적고 맛도 밍밍
+								</td>
+							</tr>
+						</table>
+						<table id="list_food10" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>제주김만복 서귀포점</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>간이 약하다, 비리다, 맛없음, 맛이 변함</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">양에 비에 비싼 느낌
+									<br> 맛없고 비싸요 위생도
+									<br>있네요 라면은 비린맛이 많이나고
+									<br>많이 변했네요 
+									<br>별하나도 아깝
+									<br> 맛없고 비싸요 위생도 
+									<br>너무 비싼가격치고 즉석김밥이
+									<br>간이 너무 약하고 라면같지 않은
+								</td>
+							</tr>
+						</table>
+						<table id="list_food11" class="type01">
+							<tr>
+								<th>상호명</th>
+								<td>해월정</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>짜다, 간이 쎄다, 간이 약하다, 맛이 변함</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 재방문 X, 주문강요, 불친절</td>
+							</tr>
+							<tr>
+								<th>양</th>
+								<td>적음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">완쫀 실망너무 적어서 실망맛이 없어서 실망힘들정도록 불친절에 실망
+									<br>부치기 힘들정도록 불친절에 실망
+									<br>메뉴를 강요 저희 일해
+									<br>최악의 식당
+									<br>짠 이었슴 가격
+									<br>그리고 참 불친절 하셔서 깜짝
+									<br>음식퀄리티에 비해서 비싸고 불친절했습니다
+									<br>멀리서 찾아간건데 실망스러웠음
+									<br>간이 너무 쎄서 아침부터 종일
+									<br>메뉴 강요까지
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!-- 3. modal footer -->
+				<div class="modal-footer">
+					<button class="btn btn-danger btn-default pull-right" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span> Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- momdal content 정의 -->
+			<div class="modal-content">
+				<!-- 1. modal header -->
+				<!-- <div class="modal-header">
+					header
+					<button class="close" type="button" data-dismiss="modal">x</button>
+				</div> -->
+				<!-- 2. modal body -->
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+						</div>
+
+					</form>
+				</div>
+				<!-- 3. modal footer -->
+				<div class="modal-footer">
+					<button class="btn btn-danger btn-default pull-right" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span> Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- momdal content 정의 -->
+			<div class="modal-content">
+				<!-- 1. modal header -->
+				<!-- <div class="modal-header">
+					header
+					<button class="close" type="button" data-dismiss="modal">x</button>
+				</div> -->
+				<!-- 2. modal body -->
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							────────────────────────────────<br>상호명 : 국수바다본점<br>맛 : 냄새남, 느끼하다, 맛없음, 맛이 변함<br>서비스 : 위생불량, 재방문 X, 최악, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>국물에서 돼지 냄새 심해요,<br> 불친절,<br>고기국수 먹었는데 느끼하고 간이 딱,<br>고기국수 중 최악입니다 진짜,<br> 비위생적,<br> 가격이 비싸서 다시는 가고싶은,<br>모르겠고 고기국수 노맛,<br> 상당히 불친절함,<br>점도아까움,<br>먹은 제주음식중최악
+							────────────────────────────────<br>상호명 : 돈사돈<br>맛 : 냄새남, 짜다, 느끼하다, 맛없음<br>서비스 : 재방문 X, 주문누락, 직원들 잡담 심함, 주문강요, 대기시간 김, 식당 비좁음, 최악, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>고기 양이 적다고 하셨지만 결국,<br> 비싼돈주고 그런,<br>고기가 그 비싼 가격에 적당한,<br>우린 음식을 남겼고,<br>그냥 모든게 최악임,<br>음식점 중 최악입니다,<br>직원분이 너무 불친절 하셨습니다,<br>우리가족앞에서 계속 잡담함,<br>갔는데 직원들 불친절함 필요한거 갔다달라하면,<br>사장님 정말 불친절하십니다 자기들이 인원보고
+							────────────────────────────────<br>상호명 : 돌카롱 사려니숲길점<br>맛 : 느끼하다, 맛없음<br>서비스 : 위생불량, 재방문 X, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>가격도 이렇게너 비싼데 맛이 너무,<br>커피 비싸고 맛없어요,<br>느낌 가격도 비싸요,<br>솔직하게 진짜 맛없고 꼬끄는 너무,<br>필링이 버터크림같은데 느끼하고 맛이없어서 못먹겠더라구요,<br>가격만 비싸고 맛은 평범해요,<br>후기를 꼭 남겨야겠네요,<br> 비싼 마카롱을 남기기,<br>살다살다 이렇게 맛없는 마카롱은 첨이라,<br>않아서 좀 실망이였어요
+							────────────────────────────────<br>상호명 : 동문올레수산<br>맛 : 맛없음, 미리 준비해 오래된 음식<br>서비스 : 식당 내 시끄러움, 최악, 재방문 X, 불친절<br>양 : <br>가격 : <br>─────────────리뷰내용요약─────────────<br>최악이다,<br>불친절의 끝,<br>맛도 양도 최악 ,<br>꺼내고 대실망,<br>완전 맛없어요 시끄러워 정신없어요,<br>포장해놓은지 오래되서 말라있음 특히,<br>매운탕은 완전 맛없어요 시끄러워 정신없어요
+							────────────────────────────────<br>상호명 : 바다다<br>맛 : <br>서비스 : 식당 내 시끄러움, 위생불량, 최악, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>별로 겁나게 비싸요 오션뷰 보고,<br>쇼파가 너무 더럽고,<br>음료값이 너무비싸 두번은안갈거임,<br>비싸고 음악자체가 시끄러워요 가격대비 그닥,<br>비싸고 음악자체가 시끄러워요,<br>너무너무 불친절해요 아무리 위치가,<br>자리 등등 최악
+							────────────────────────────────<br>상호명 : 복자씨연탄구이<br>맛 : 느끼하다, 맛이 변함<br>서비스 : 재방문 X, 직원 대응 미흡<br>양 : 적음<br>가격 : <br>─────────────리뷰내용요약─────────────<br>생각보다 너무 느끼하고 비계가 많았어요,<br>점도 아깝습니다,<br>것에서부터 맛이 달라졌으며,<br>납품하는 업체때문이다며 핑계되고 절대,<br>이번년도엔 굉장히 실망스러웠습니다 기본적으로,<br>돈내고 나온게 아깝네여,<br>밑반찬도 너무 적고 계란찜에는 물을
+							────────────────────────────────<br>상호명 : 수우동<br>맛 : 짜다, 느끼하다, 간이 약하다<br>서비스 : 직원들 잡담 심함, 재방문 X<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>짜 평범해요냉우동은 너무 짜고 면발기대했는데,<br>돈까스는 생각보다 밋밋 했어요  우동에,<br>우동은 너무 짜요 레몬짜서 먹으라고,<br>기다린 시간 아까워서 다른분들도 기다렸다,<br>비해 너무 비쌈 음식맛은 그냥,<br>바삭하니 냉우동에 적셔먹음존맛,<br>마스크 안쓰고 잡담너무 심해요,<br>돈까스는 평범하고 느끼함,<br>대비 가격이 비쌉니다 혼밥세트의 돈가스와,<br>구지 제주도까지가서 비싼우동을 시간낭비하며
+							────────────────────────────────<br>상호명 : 앙뚜아네트<br>맛 : 쓰다<br>서비스 : 재방문 X, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>뺑오쇼콜라 먹었는데 쓴맛이 너무,<br>정말 좀 불친절,<br>가격대비 조금 실망스러워요,<br>가격은 비싼데 그에 비에,<br>너무 비쌈 비쌈 비쌈
+							────────────────────────────────<br>상호명 : 자매국수<br>맛 : 냄새남, 짜다, 맛없음<br>서비스 : 식당 비좁음, 재방문 X, 식당 내 시끄러움, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>멸치국수 또한 남겼고 아감발 ,<br>안나요 약은 적고 직원분이 불친절해요,<br>돼지냄새는 안나요,<br>맛이 너무 짜요 ,<br>먹고나면 돈 아깝다는 생각이 드는,<br>주차시설도없구 불친절,<br>본점가봤다가 너무 맛없고 양도 적어서,<br>육수 짜고 맛없어요,<br>시장통에서 먹는것처럼 시끄러웠고 실내온도 관리가,<br> 양 적어요
+							────────────────────────────────<br>상호명 : 전망좋은횟집<br>맛 : 짜다, 조미료맛, 맛없음, 비리다, 쓰다<br>서비스 : 식당 내 시끄러움, 재방문 X, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br> 결국 부족해서 식사로 오분작해물뚝배기랑,<br>귀찮게 인증받고 남겨요,<br>정말 맛없어요,<br> 매운탕은 조미료맛만 강함,<br>가격은 드럽게 비싸고,<br>점도 아까워요,<br>시켰는데 너무 맛없고 서울보다도 신선도가,<br>음식도 없고 시끄럽고 엄청 짜증났어요,<br>짠맛 한치와 쓴맛 채소로 만든,<br>저거 갖다주는 창렬함
+							────────────────────────────────<br>상호명 : 제주 김만복 애월점<br>맛 : 짜다, 맛없음, 간이 약하다<br>서비스 : 재방문 X<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>너무 비싸요 우동이 ,<br>비싸요 ,<br> 비싸요,<br>전복죽은 본죽보다맛없고 단무지없이 졸싱거워서,<br>라면 너무 짜요,<br>그나마 덜 아까움,<br>단무지없이 졸싱거워서 오징어무침이 신의한수
+							────────────────────────────────<br>상호명 : 제주김만복 본점<br>맛 : 맛없음, 간이 약하다<br>서비스 : 최악, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>알바생넘 감정없는 불친절한 느낌이 별루였네요,<br>가봤는데 양도 적고 맛도 밍밍,<br>말라있는 밥알 맛없어 남은 김밥,<br>비해 가격은 비쌈,<br>맛없음 제주도에서 먹었던,<br>직원분이 너무 불친절하네요 포장했는데 오징어국물이,<br>맛없다고 할 수가,<br>니맛도 내맛도아닌 무맛이네요,<br>볶은밥이라는데 가격도 비싸네요,<br>적고 맛도 밍밍
+							────────────────────────────────<br>상호명 : 제주김만복 서귀포점<br>맛 : 간이 약하다, 비리다, 맛없음, 맛이 변함<br>서비스 : 재방문 X<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>양에 비에 비싼 느낌,<br> 맛없고 비싸요 위생도,<br>있네요 라면은 비린맛이 많이나고,<br>많이 변했네요 ,<br>별하나도 아깝,<br> 맛없고 비싸요 위생도 ,<br>너무 비싼가격치고 즉석김밥이,<br>간이 너무 약하고 라면같지 않은
+							────────────────────────────────<br>상호명 : 해월정<br>맛 : 짜다, 간이 쎄다, 간이 약하다, 맛이 변함<br>서비스 : 최악, 재방문 X, 주문강요, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>완쫀 실망너무 적어서 실망맛이 없어서 실망힘들정도록 불친절에 실망,<br>부치기 힘들정도록 불친절에 실망,<br>메뉴를 강요 저희 일해,<br>최악의 식당,<br>짠 이었슴 가격,<br>그리고 참 불친절 하셔서 깜짝,<br>음식퀄리티에 비해서 비싸고 불친절했습니다,<br>멀리서 찾아간건데 실망스러웠음,<br>간이 너무 쎄서 아침부터 종일,<br>메뉴 강요까지
+						</div>
+
+					</form>
+				</div>
+				<!-- 3. modal footer -->
+				<div class="modal-footer">
+					<button class="btn btn-danger btn-default pull-right" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span> Close
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<!-- 7. google map : https://cloud.google.com/maps-platform/ -->
-	<div id="listmap" class="container">
-		<h3 class="text-center">LIST ON THE MAP</h3>
-		<div class="folium-map" id="map_7701a7cf59b44b40a2c4bcb75772cf42" ></div>
+	<div id="listmap" class="container text-center">
+		<div>
+			<h3>LIST ON THE MAP</h3>
+			<br>
+			<table>
+				<tr>
+					<td>
+						<button class="btn" onclick="toggleMapFood()">음식점</button>
+						<button class="btn" onclick="toggleMapCafe()">카  페</button>
+						<button class="btn" onclick="toggleMapInn()">숙  소</button>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="folium-map" id="map_7701a7cf59b44b40a2c4bcb75772cf42" style='display:block'></div>
+			<div class="folium-map" id="map_e43f596dd2174b7d80a36a56d9b3f9f3" style='display:block'></div>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+			   document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='none';
+			}, false);
+		</script>
+		<script>
+		    function toggleMapFood() {
+		        document.querySelector('#map_7701a7cf59b44b40a2c4bcb75772cf42').style.display='block';
+		        document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='none';
+
+		    }
+		    function toggleMapInn() {
+		    	document.querySelector('#map_7701a7cf59b44b40a2c4bcb75772cf42').style.display='none';
+		        document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='block';
+		    }
+		</script>
 	</div>
 	
-
 	<!-- 8. footer -->
 	<footer class="text-center">
-		<a href="#myPage" class="up-arrow" data-toggle="tooltip" title="To Top">
+		<a href="#project" class="up-arrow" data-toggle="tooltip" title="To Top">
 			<span class="glyphicon glyphicon-chevron-up"></span>
 		</a><br><br>
 		<p>GitHub
@@ -297,7 +909,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 
 			// navbar와 footer를 부드럽게 scrolling
-			$(".navbar a, footer a[href='#myPage']").on('click', function() {
+			$(".navbar a, footer a[href='#project']").on('click', function() {
 				if(this.hash !== "") {
 					event.preventDefault(); // 이벤트 발생을 제거
 					var hash = this.hash;
@@ -311,7 +923,7 @@
 		})
 	</script>
 </body>
-<script>    
+<script>    //음식점
     
             var map_7701a7cf59b44b40a2c4bcb75772cf42 = L.map(
                 "map_7701a7cf59b44b40a2c4bcb75772cf42",
@@ -679,6 +1291,280 @@
         
 
         marker_a0b524c8034e4305b670efc80ff1e1c6.bindPopup(popup_daab09d75eb9409b844abe428f7a4ad3)
+        ;
+
+        
+    
+</script>
+
+<script>	//숙소
+    
+            var map_e43f596dd2174b7d80a36a56d9b3f9f3 = L.map(
+                "map_e43f596dd2174b7d80a36a56d9b3f9f3",
+                {
+                    center: [33.43408656, 126.65315960000001],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e47cd11cc6db47bb87ba319ba1c7afc1 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var marker_dcc4a024b0024452b877204415800c62 = L.marker(
+                [33.5151428, 126.95673899999998],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_0035280e839142a3898160bf373b8be1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dcc4a024b0024452b877204415800c62.setIcon(icon_0035280e839142a3898160bf373b8be1);
+        
+    
+        var popup_e32cfe319bf440dba47828a2114a6708 = L.popup({});
+
+        
+            var html_b56d0fa7e8474fbbab789051b4438ac4 = $(`<div id="html_b56d0fa7e8474fbbab789051b4438ac4" style="width: 100.0%; height: 100.0%;">우도달그리안펜션</div>`)[0];
+            popup_e32cfe319bf440dba47828a2114a6708.setContent(html_b56d0fa7e8474fbbab789051b4438ac4);
+        
+
+        marker_dcc4a024b0024452b877204415800c62.bindPopup(popup_e32cfe319bf440dba47828a2114a6708)
+        ;
+
+        
+    
+    
+            var marker_9abb69c716084f4899429257306c17d1 = L.marker(
+                [33.256213, 126.41516599999999],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_6bf0a438e6f44e509796da993d00187a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9abb69c716084f4899429257306c17d1.setIcon(icon_6bf0a438e6f44e509796da993d00187a);
+        
+    
+        var popup_a2b7ebb2f6304d31aae23b30089bb31b = L.popup({});
+
+        
+            var html_c2a2a990d759495aa54bc325a73102f9 = $(`<div id="html_c2a2a990d759495aa54bc325a73102f9" style="width: 100.0%; height: 100.0%;">그랑빌</div>`)[0];
+            popup_a2b7ebb2f6304d31aae23b30089bb31b.setContent(html_c2a2a990d759495aa54bc325a73102f9);
+        
+
+        marker_9abb69c716084f4899429257306c17d1.bindPopup(popup_a2b7ebb2f6304d31aae23b30089bb31b)
+        ;
+
+        
+    
+    
+            var marker_65764496d8ac463ba4350939a4fbb390 = L.marker(
+                [33.5523662, 126.701678],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_515b61e3eb304560abb1075ade122b21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_65764496d8ac463ba4350939a4fbb390.setIcon(icon_515b61e3eb304560abb1075ade122b21);
+        
+    
+        var popup_f263d15b440b4d459d7b85fba9840ac3 = L.popup({});
+
+        
+            var html_b15ed136546f47a9a7e554729136a9dd = $(`<div id="html_b15ed136546f47a9a7e554729136a9dd" style="width: 100.0%; height: 100.0%;">제주캐슬풀리조트</div>`)[0];
+            popup_f263d15b440b4d459d7b85fba9840ac3.setContent(html_b15ed136546f47a9a7e554729136a9dd);
+        
+
+        marker_65764496d8ac463ba4350939a4fbb390.bindPopup(popup_f263d15b440b4d459d7b85fba9840ac3)
+        ;
+
+        
+    
+    
+            var marker_2f48e8d548c64ad6b842f9e4a2b15836 = L.marker(
+                [33.5134184, 126.52383300000001],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_c4ce992477b7477c80893e9ec5cc6d65 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2f48e8d548c64ad6b842f9e4a2b15836.setIcon(icon_c4ce992477b7477c80893e9ec5cc6d65);
+        
+    
+        var popup_4d02f033ad1b46f48a671ca9f188919a = L.popup({});
+
+        
+            var html_6bc779365cef4d679230bee25452b4fb = $(`<div id="html_6bc779365cef4d679230bee25452b4fb" style="width: 100.0%; height: 100.0%;">미소게스트하우스</div>`)[0];
+            popup_4d02f033ad1b46f48a671ca9f188919a.setContent(html_6bc779365cef4d679230bee25452b4fb);
+        
+
+        marker_2f48e8d548c64ad6b842f9e4a2b15836.bindPopup(popup_4d02f033ad1b46f48a671ca9f188919a)
+        ;
+
+        
+    
+    
+            var marker_0ef3ea44abd04b34bb756b1c7a41f69d = L.marker(
+                [33.5260752, 126.788404],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_28660a75af5d413daa3243b9e487fd39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0ef3ea44abd04b34bb756b1c7a41f69d.setIcon(icon_28660a75af5d413daa3243b9e487fd39);
+        
+    
+        var popup_a2e967558bd14e1cb0d6f1b13598acba = L.popup({});
+
+        
+            var html_6ad805037d08417cbb51de8fb3cb8e9c = $(`<div id="html_6ad805037d08417cbb51de8fb3cb8e9c" style="width: 100.0%; height: 100.0%;">제주오션뷰2차</div>`)[0];
+            popup_a2e967558bd14e1cb0d6f1b13598acba.setContent(html_6ad805037d08417cbb51de8fb3cb8e9c);
+        
+
+        marker_0ef3ea44abd04b34bb756b1c7a41f69d.bindPopup(popup_a2e967558bd14e1cb0d6f1b13598acba)
+        ;
+
+        
+    
+    
+            var marker_536e59b5885143f88c2ae4c8a77a01e1 = L.marker(
+                [33.4948913, 126.62315],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_7ee26ce56b1d43359383742cfd849476 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_536e59b5885143f88c2ae4c8a77a01e1.setIcon(icon_7ee26ce56b1d43359383742cfd849476);
+        
+    
+        var popup_7f94902bbed94d7faa48b1740ff902ef = L.popup({});
+
+        
+            var html_aacc692fef714719bcf7284c2ca4afe8 = $(`<div id="html_aacc692fef714719bcf7284c2ca4afe8" style="width: 100.0%; height: 100.0%;">스파벨리스</div>`)[0];
+            popup_7f94902bbed94d7faa48b1740ff902ef.setContent(html_aacc692fef714719bcf7284c2ca4afe8);
+        
+
+        marker_536e59b5885143f88c2ae4c8a77a01e1.bindPopup(popup_7f94902bbed94d7faa48b1740ff902ef)
+        ;
+
+        
+    
+    
+            var marker_ffa33c67b1544c50a082d9fcfc0f49f2 = L.marker(
+                [33.5549924, 126.795612],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_64ec382680f34f7ab1a6995b5b78d964 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ffa33c67b1544c50a082d9fcfc0f49f2.setIcon(icon_64ec382680f34f7ab1a6995b5b78d964);
+        
+    
+        var popup_a5b346333e304585a8b14812435ecd45 = L.popup({});
+
+        
+            var html_7e5c9a657fbb4c32832c17a8b3f18b70 = $(`<div id="html_7e5c9a657fbb4c32832c17a8b3f18b70" style="width: 100.0%; height: 100.0%;">제주도 간장남들 게스트하우스 파티</div>`)[0];
+            popup_a5b346333e304585a8b14812435ecd45.setContent(html_7e5c9a657fbb4c32832c17a8b3f18b70);
+        
+
+        marker_ffa33c67b1544c50a082d9fcfc0f49f2.bindPopup(popup_a5b346333e304585a8b14812435ecd45)
+        ;
+
+        
+    
+    
+            var marker_de066bc447714fddbcc37623e51915fb = L.marker(
+                [33.2591486, 126.41058500000001],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_a61b31caa93d42879d5bd3cfec53bd8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_de066bc447714fddbcc37623e51915fb.setIcon(icon_a61b31caa93d42879d5bd3cfec53bd8e);
+        
+    
+        var popup_4aeb9be1aac6412db5b5f3129c42a804 = L.popup({});
+
+        
+            var html_808b5283f91c418eb17f184ca9648bc3 = $(`<div id="html_808b5283f91c418eb17f184ca9648bc3" style="width: 100.0%; height: 100.0%;">스테이 게스트하우스</div>`)[0];
+            popup_4aeb9be1aac6412db5b5f3129c42a804.setContent(html_808b5283f91c418eb17f184ca9648bc3);
+        
+
+        marker_de066bc447714fddbcc37623e51915fb.bindPopup(popup_4aeb9be1aac6412db5b5f3129c42a804)
+        ;
+
+        
+    
+    
+            var marker_e20ff23ca6634543b474574e307fb18b = L.marker(
+                [33.2558585, 126.416477],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_2652507a86be489393119aa6e8a1ae42 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e20ff23ca6634543b474574e307fb18b.setIcon(icon_2652507a86be489393119aa6e8a1ae42);
+        
+    
+        var popup_709cd09df601420ebd8486adef2bbdca = L.popup({});
+
+        
+            var html_447f86f59189453e9418ebfc8d28fc68 = $(`<div id="html_447f86f59189453e9418ebfc8d28fc68" style="width: 100.0%; height: 100.0%;">제이제이게스트하우스</div>`)[0];
+            popup_709cd09df601420ebd8486adef2bbdca.setContent(html_447f86f59189453e9418ebfc8d28fc68);
+        
+
+        marker_e20ff23ca6634543b474574e307fb18b.bindPopup(popup_709cd09df601420ebd8486adef2bbdca)
+        ;
+
+        
+    
+    
+            var marker_398b5d737d9747abbcd497c147907b36 = L.marker(
+                [33.4127592, 126.899952],
+                {}
+            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+        
+    
+            var icon_315a6ad9e321427e990f4f651e7f3933 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_398b5d737d9747abbcd497c147907b36.setIcon(icon_315a6ad9e321427e990f4f651e7f3933);
+        
+    
+        var popup_6f1aef4cd7be4c769c8ec30bd70112d4 = L.popup({});
+
+        
+            var html_26322b3088544510b9ee4638c7e9a4b8 = $(`<div id="html_26322b3088544510b9ee4638c7e9a4b8" style="width: 100.0%; height: 100.0%;">제주도게스트하우스파티성산유쾌한환이네</div>`)[0];
+            popup_6f1aef4cd7be4c769c8ec30bd70112d4.setContent(html_26322b3088544510b9ee4638c7e9a4b8);
+        
+
+        marker_398b5d737d9747abbcd497c147907b36.bindPopup(popup_6f1aef4cd7be4c769c8ec30bd70112d4)
         ;
 
         
