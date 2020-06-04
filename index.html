@@ -93,6 +93,34 @@
 			height: 530px;
 			overflow-y: scroll;
 		}
+		.list_inn {
+			height: 530px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		.btn_inn {
+			float: left;
+			border-collapse: separate;
+			border-spacing: 5px;
+		}
+		.table_inn {
+			height: 530px;
+			overflow-y: scroll;
+		}
+		.list_cafe {
+			height: 530px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		.btn_cafe {
+			float: left;
+			border-collapse: separate;
+			border-spacing: 5px;
+		}
+		.table_cafe {
+			height: 530px;
+			overflow-y: scroll;
+		}
 		.modal-header {
 			padding: 30px 30px;
 			height: 10px;
@@ -185,7 +213,15 @@
                     top: 0.0%;
                 }
 
-                #map_e43f596dd2174b7d80a36a56d9b3f9f3 { /*숙소*/
+                #map_499a8205008f46cca72502274e338e8d { /*카페*/
+                    position: relative;
+                    width: 100.0%;
+                    height: 60.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+
+                #map_25fc076b5e4242269015f61f069cccb2 { /*숙소*/
                     position: relative;
                     width: 100.0%;
                     height: 60.0%;
@@ -273,6 +309,10 @@
 			      document.getElementById("wordcloud_img1").src = "./images/wordcloud_pos_food.png";
 			      document.getElementById("wordcloud_img2").src = "./images/wordcloud_neg_food.png";
 			    }
+			    function toggleImgCafe() {
+			      document.getElementById("wordcloud_img1").src = "./images/wordcloud_pos_cafe.png";
+			      document.getElementById("wordcloud_img2").src = "./images/wordcloud_neg_cafe.png";
+			    }
 			    function toggleImgInn() {
 			      document.getElementById("wordcloud_img1").src = "./images/wordcloud_pos_inn.png";
 			      document.getElementById("wordcloud_img2").src = "./images/wordcloud_neg_inn.png";
@@ -286,6 +326,7 @@
 	<div id="review" class="bg-1">
 		<div class="container text-center">
 			<h3 class="text-center">LIST AND REVIEW</h3>
+			<br>
 			<p class="text-center">
 			</p>
 			<div class="row text-center">
@@ -293,21 +334,21 @@
 					<div class="thumbnail">
 						<p><strong>음식점</strong></p>
 						<p>총 11곳</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal1">Buy Tickets</button>
+						<button class="btn" data-toggle="modal" data-target="#myModal1">상세보기</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<p><strong>New York</strong></p>
-						<p>Friday 27 November 2020</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal2">Buy Tickets</button>
+						<p><strong>카페</strong></p>
+						<p>총 13곳</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal2">상세보기</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<p><strong>San Francisco</strong></p>
-						<p>Friday 27 November 2020</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal3">Buy Tickets</button>
+						<p><strong>숙소</strong></p>
+						<p>총 14곳</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal3">상세보기</button>
 					</div>
 				</div>
 			</div>
@@ -788,21 +829,477 @@
 	</div>
 
 	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog" style="width: 1000px">
 			<!-- momdal content 정의 -->
 			<div class="modal-content">
 				<!-- 1. modal header -->
-				<!-- <div class="modal-header">
-					header
-					<button class="close" type="button" data-dismiss="modal">x</button>
-				</div> -->
+				<div class="modal-header">
+					<p style="font-size: 20px">
+						<button class="close" type="button" data-dismiss="modal">
+						x
+						</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카페
+					</p>
+				</div>
 				<!-- 2. modal body -->
 				<div class="modal-body">
-					<form role="form">
-						<div class="form-group">
-						</div>
-
-					</form>
+					<div class="form-group list_cafe col-sm-3">
+						<table class="btn_cafe">
+							<tr>
+								<td><a href="#list_cafe01"><button class="list_btn">더클리프</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe02"><button class="list_btn">돌카롱 제주공항점</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe03"><button class="list_btn">명월국민학교</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe04"><button class="list_btn">미쁜제과</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe05"><button class="list_btn">바다다</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe06"><button class="list_btn">블랑로쉐</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe07"><button class="list_btn">에스프레소 라운지</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe08"><button class="list_btn">용두암오메기떡</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe09"><button class="list_btn">우유부단</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe10"><button class="list_btn">원앤온리</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe11"><button class="list_btn">제일성심당</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe12"><button class="list_btn">지금이순간카페</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_cafe13"><button class="list_btn">하이엔드제주</button></a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="form-group table_cafe col-sm-9">
+						<table id="list_cafe01" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>더클리프</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>청소 미흡, 최악, 벌레 많음, 직원이 눈치 줌</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈, 가격 대비 별로</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 눈치가 너무일찍 찾아간손님 눈치주고 죄인취급
+									<br>없는게 가격만 비쌈
+									<br>의자는 너무 더러워서 물티슈로 닦았는데
+									<br>영향도 있어요 #가격깡패 
+									<br>말도 안되는데 뷰값이라고 생각해야죠
+									<br> 웬 모기랑 날벌레가
+									<br>자랑하는 곳에서 최악의 서비스
+									<br>모기랑 날벌레가 그리
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe02" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>돌카롱 제주공항점</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>기름지다, 평범한 맛</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									맛은 보통입니다 친절하지
+									<br>보통의 마카롱맛이아닙니다
+									<br>너무 기름진게 아쉽습니다
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe03" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>명월국민학교</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>평범한 맛</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									특색이 없고 평범해요
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe04" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>미쁜제과</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>청소 미흡, 불친절, 직원 실수, 주문 누락</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									음료도 비싸고맛없었네요 
+									<br> 실수는 할
+									<br>말도 없이 쓰레기통에 버림그리고 화장실 쓰레기통 관리 좀
+									<br>비싸고 커피  맛없어요 
+									<br>불친절 하셔서 다음에는
+									<br>계산직원 빵값 계산 잘못함
+									<br>품목이 너무 비싸고 커피  맛없어요
+									<br>빵도특색없었고 음료도 비싸고맛없었네요 
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe05" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>바다다</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>고객 응대 미흡, 가게 내부 시끄러움, 최악, 불친절, 재방문 X</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 음료맛도 별로 겁나게 비싸요
+									<br>별로 겁나게 비싸요 오션뷰 보고
+									<br>비싸고 음악자체가 시끄러워요
+									<br>비싸고 음악자체가 시끄러워요 가격대비 그닥
+									<br> 맛도 별로 가격은 헉
+									<br>자리 등등 최악
+									<br>음료값이 너무비싸 두번은안갈거임
+									<br>너무너무 불친절해요 아무리 위치가
+									<br>알바생이 정말 노답
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe06" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>블랑로쉐</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 의자/테이블 불편함</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									가격이 너무 비싸서 아쉬웠습니다
+									<br>최악의 카페입니다
+									<br>가격이 너무 비쌈
+									<br>앉아있기 엄청나게 불편합니다
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe07" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>에스프레소 라운지</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 불친절</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									마인드는
+									<br>오늘은 참 불친절하네요
+									<br>별로지만 파운드케이크는
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe08" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>용두암오메기떡</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 직원이 눈치 줌, 불친절, 고객 응대 미흡</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 밑에 불친절하다고 몇몇 그런거
+									<br> 손님한테 반말하시고 위아래로
+									<br>같네요 정말 불쾌합니다
+									<br>친절한 듯 면박을 주네요
+									<br>소량 구매하실분들 눈치받지 마시고
+									<br>별로 아주머니께서 불친절하세요설명안하고 얼렁뚱땅 별로에요 
+									<br>사장님 너무 불친절해요
+									<br>여쭤보니 제대로 대답도 안하시더라구요
+									<br>느낌이었고 굉장히 불친절했어요 
+									<br>별점 한개도 아깝습니다 
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe09" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>우유부단</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>너무 달다, 평범한 맛</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									살다살다 이렇게 불친절하게 대하는분 처음봤네여
+									<br> 비싼데 양도적어요
+									<br>답답하단식의 대꾸 최악이에요 그만큼
+									<br>여자분 너무 불친절하시네요 
+									<br>음료는 너무 달아요
+									<br> 아이스크림 비싸기만하고 기대했던
+									<br>다시 여쭤봤는데 성질내시네요
+									<br>완전 아니라서 실망
+									<br>맛은 평범합니다
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe10" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>원앤온리</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 의자/테이블 불편함</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈, 가격 대비 별로</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									의자도 불편하고
+									<br>돈나 맛없음
+									<br>낮은 퀄리티 뷰값이 포함된
+									<br>가격이 너무 비싼데 음식맛은 그저그래요
+									<br>카페분위기에요 너무별로여서 
+									<br>가격이 너무 비싸고 맛은 쏘쏘
+									<br>뷰값은 하나
+									<br>가격이 너무 비싸요
+									<br>비싸요 너무 비싸요 이게 
+									<br>음식이 많이 실망스럽네요
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe11" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제일성심당</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>불친절, 벌레 많음</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									빵위에 날파리가 드글
+									<br>알바인지 너무 불친절함
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe12" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>지금이순간카페</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>떫은 맛, 맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>재방문 X, 최악, 불친절, 가게 내부 시끄러움</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									불렀다고 알바가 시끄럽다고 조용히 시켜달라하고
+									<br>커피 다 별로였다  커피는
+									<br>남아있었고 차는 떫었다 케이크조차 초코케이크그
+									<br>하나 다 불친절함 장사 왜
+									<br>카페중에 제일 불친절하네요 
+									<br>케이크조차 초코케이크그 맛없기힘든데
+									<br>걸 감안해도 불친절합니다 전반적인 직원
+									<br>유명카페인것 같은데 실망만 가득했네요
+									<br>별점 반개도 아까운곳  그리고
+									<br>미치고 서비스라고는 최악인 카페네요
+								</td>
+							</tr>
+						</table>
+						<table id="list_cafe13" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>하이엔드제주</td>
+							</tr>
+							<tr>
+								<th>맛</th>
+								<td>맛없음</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>청소 미흡, 가게 내부 냄새남, 주문 강요, 불친절, 의자/테이블 불편함, 재방문 X</td>
+							</tr>
+							<tr>
+								<th>가격</th>
+								<td>비쌈</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									진동하고 의자는 더럽고 페인트는 떨어져
+									<br>바닥이 너무 지저분합니다
+									<br>카페가 전체적으로 지저분해요 겉만 그럴싸한
+									<br>뷰는 좋은데 지저분하고 음료가 비싸고
+									<br>맛까지 너무 별로 였었요
+									<br> 너무 지저분해서 놀랬음
+									<br> 비쌈
+									<br>협소한편이구요 가격대도 비싼편인데 그만큼
+									<br>생각보다 뷰가 별로였어요
+									<br>비싼 바가지에다가 불친절 잘 경험하고
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<!-- 3. modal footer -->
 				<div class="modal-footer">
@@ -815,35 +1312,546 @@
 	</div>
 
 	<div class="modal fade" id="myModal3" role="dialog">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog" style="width: 1000px">
 			<!-- momdal content 정의 -->
 			<div class="modal-content">
 				<!-- 1. modal header -->
-				<!-- <div class="modal-header">
-					header
-					<button class="close" type="button" data-dismiss="modal">x</button>
-				</div> -->
+				<div class="modal-header">
+					<p style="font-size: 20px">
+						<button class="close" type="button" data-dismiss="modal">
+						x
+						</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;숙소
+					</p>
+				</div>
 				<!-- 2. modal body -->
 				<div class="modal-body">
-					<form role="form">
-						<div class="form-group">
-							────────────────────────────────<br>상호명 : 국수바다본점<br>맛 : 냄새남, 느끼하다, 맛없음, 맛이 변함<br>서비스 : 위생불량, 재방문 X, 최악, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>국물에서 돼지 냄새 심해요,<br> 불친절,<br>고기국수 먹었는데 느끼하고 간이 딱,<br>고기국수 중 최악입니다 진짜,<br> 비위생적,<br> 가격이 비싸서 다시는 가고싶은,<br>모르겠고 고기국수 노맛,<br> 상당히 불친절함,<br>점도아까움,<br>먹은 제주음식중최악
-							────────────────────────────────<br>상호명 : 돈사돈<br>맛 : 냄새남, 짜다, 느끼하다, 맛없음<br>서비스 : 재방문 X, 주문누락, 직원들 잡담 심함, 주문강요, 대기시간 김, 식당 비좁음, 최악, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>고기 양이 적다고 하셨지만 결국,<br> 비싼돈주고 그런,<br>고기가 그 비싼 가격에 적당한,<br>우린 음식을 남겼고,<br>그냥 모든게 최악임,<br>음식점 중 최악입니다,<br>직원분이 너무 불친절 하셨습니다,<br>우리가족앞에서 계속 잡담함,<br>갔는데 직원들 불친절함 필요한거 갔다달라하면,<br>사장님 정말 불친절하십니다 자기들이 인원보고
-							────────────────────────────────<br>상호명 : 돌카롱 사려니숲길점<br>맛 : 느끼하다, 맛없음<br>서비스 : 위생불량, 재방문 X, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>가격도 이렇게너 비싼데 맛이 너무,<br>커피 비싸고 맛없어요,<br>느낌 가격도 비싸요,<br>솔직하게 진짜 맛없고 꼬끄는 너무,<br>필링이 버터크림같은데 느끼하고 맛이없어서 못먹겠더라구요,<br>가격만 비싸고 맛은 평범해요,<br>후기를 꼭 남겨야겠네요,<br> 비싼 마카롱을 남기기,<br>살다살다 이렇게 맛없는 마카롱은 첨이라,<br>않아서 좀 실망이였어요
-							────────────────────────────────<br>상호명 : 동문올레수산<br>맛 : 맛없음, 미리 준비해 오래된 음식<br>서비스 : 식당 내 시끄러움, 최악, 재방문 X, 불친절<br>양 : <br>가격 : <br>─────────────리뷰내용요약─────────────<br>최악이다,<br>불친절의 끝,<br>맛도 양도 최악 ,<br>꺼내고 대실망,<br>완전 맛없어요 시끄러워 정신없어요,<br>포장해놓은지 오래되서 말라있음 특히,<br>매운탕은 완전 맛없어요 시끄러워 정신없어요
-							────────────────────────────────<br>상호명 : 바다다<br>맛 : <br>서비스 : 식당 내 시끄러움, 위생불량, 최악, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>별로 겁나게 비싸요 오션뷰 보고,<br>쇼파가 너무 더럽고,<br>음료값이 너무비싸 두번은안갈거임,<br>비싸고 음악자체가 시끄러워요 가격대비 그닥,<br>비싸고 음악자체가 시끄러워요,<br>너무너무 불친절해요 아무리 위치가,<br>자리 등등 최악
-							────────────────────────────────<br>상호명 : 복자씨연탄구이<br>맛 : 느끼하다, 맛이 변함<br>서비스 : 재방문 X, 직원 대응 미흡<br>양 : 적음<br>가격 : <br>─────────────리뷰내용요약─────────────<br>생각보다 너무 느끼하고 비계가 많았어요,<br>점도 아깝습니다,<br>것에서부터 맛이 달라졌으며,<br>납품하는 업체때문이다며 핑계되고 절대,<br>이번년도엔 굉장히 실망스러웠습니다 기본적으로,<br>돈내고 나온게 아깝네여,<br>밑반찬도 너무 적고 계란찜에는 물을
-							────────────────────────────────<br>상호명 : 수우동<br>맛 : 짜다, 느끼하다, 간이 약하다<br>서비스 : 직원들 잡담 심함, 재방문 X<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>짜 평범해요냉우동은 너무 짜고 면발기대했는데,<br>돈까스는 생각보다 밋밋 했어요  우동에,<br>우동은 너무 짜요 레몬짜서 먹으라고,<br>기다린 시간 아까워서 다른분들도 기다렸다,<br>비해 너무 비쌈 음식맛은 그냥,<br>바삭하니 냉우동에 적셔먹음존맛,<br>마스크 안쓰고 잡담너무 심해요,<br>돈까스는 평범하고 느끼함,<br>대비 가격이 비쌉니다 혼밥세트의 돈가스와,<br>구지 제주도까지가서 비싼우동을 시간낭비하며
-							────────────────────────────────<br>상호명 : 앙뚜아네트<br>맛 : 쓰다<br>서비스 : 재방문 X, 불친절<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>뺑오쇼콜라 먹었는데 쓴맛이 너무,<br>정말 좀 불친절,<br>가격대비 조금 실망스러워요,<br>가격은 비싼데 그에 비에,<br>너무 비쌈 비쌈 비쌈
-							────────────────────────────────<br>상호명 : 자매국수<br>맛 : 냄새남, 짜다, 맛없음<br>서비스 : 식당 비좁음, 재방문 X, 식당 내 시끄러움, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>멸치국수 또한 남겼고 아감발 ,<br>안나요 약은 적고 직원분이 불친절해요,<br>돼지냄새는 안나요,<br>맛이 너무 짜요 ,<br>먹고나면 돈 아깝다는 생각이 드는,<br>주차시설도없구 불친절,<br>본점가봤다가 너무 맛없고 양도 적어서,<br>육수 짜고 맛없어요,<br>시장통에서 먹는것처럼 시끄러웠고 실내온도 관리가,<br> 양 적어요
-							────────────────────────────────<br>상호명 : 전망좋은횟집<br>맛 : 짜다, 조미료맛, 맛없음, 비리다, 쓰다<br>서비스 : 식당 내 시끄러움, 재방문 X, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br> 결국 부족해서 식사로 오분작해물뚝배기랑,<br>귀찮게 인증받고 남겨요,<br>정말 맛없어요,<br> 매운탕은 조미료맛만 강함,<br>가격은 드럽게 비싸고,<br>점도 아까워요,<br>시켰는데 너무 맛없고 서울보다도 신선도가,<br>음식도 없고 시끄럽고 엄청 짜증났어요,<br>짠맛 한치와 쓴맛 채소로 만든,<br>저거 갖다주는 창렬함
-							────────────────────────────────<br>상호명 : 제주 김만복 애월점<br>맛 : 짜다, 맛없음, 간이 약하다<br>서비스 : 재방문 X<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>너무 비싸요 우동이 ,<br>비싸요 ,<br> 비싸요,<br>전복죽은 본죽보다맛없고 단무지없이 졸싱거워서,<br>라면 너무 짜요,<br>그나마 덜 아까움,<br>단무지없이 졸싱거워서 오징어무침이 신의한수
-							────────────────────────────────<br>상호명 : 제주김만복 본점<br>맛 : 맛없음, 간이 약하다<br>서비스 : 최악, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>알바생넘 감정없는 불친절한 느낌이 별루였네요,<br>가봤는데 양도 적고 맛도 밍밍,<br>말라있는 밥알 맛없어 남은 김밥,<br>비해 가격은 비쌈,<br>맛없음 제주도에서 먹었던,<br>직원분이 너무 불친절하네요 포장했는데 오징어국물이,<br>맛없다고 할 수가,<br>니맛도 내맛도아닌 무맛이네요,<br>볶은밥이라는데 가격도 비싸네요,<br>적고 맛도 밍밍
-							────────────────────────────────<br>상호명 : 제주김만복 서귀포점<br>맛 : 간이 약하다, 비리다, 맛없음, 맛이 변함<br>서비스 : 재방문 X<br>양 : <br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>양에 비에 비싼 느낌,<br> 맛없고 비싸요 위생도,<br>있네요 라면은 비린맛이 많이나고,<br>많이 변했네요 ,<br>별하나도 아깝,<br> 맛없고 비싸요 위생도 ,<br>너무 비싼가격치고 즉석김밥이,<br>간이 너무 약하고 라면같지 않은
-							────────────────────────────────<br>상호명 : 해월정<br>맛 : 짜다, 간이 쎄다, 간이 약하다, 맛이 변함<br>서비스 : 최악, 재방문 X, 주문강요, 불친절<br>양 : 적음<br>가격 : 비쌈<br>─────────────리뷰내용요약─────────────<br>완쫀 실망너무 적어서 실망맛이 없어서 실망힘들정도록 불친절에 실망,<br>부치기 힘들정도록 불친절에 실망,<br>메뉴를 강요 저희 일해,<br>최악의 식당,<br>짠 이었슴 가격,<br>그리고 참 불친절 하셔서 깜짝,<br>음식퀄리티에 비해서 비싸고 불친절했습니다,<br>멀리서 찾아간건데 실망스러웠음,<br>간이 너무 쎄서 아침부터 종일,<br>메뉴 강요까지
-						</div>
-
-					</form>
+					<div class="form-group list_inn col-sm-3">
+						<table class="btn_inn">
+							<tr>
+								<td><a href="#list_inn01"><button class="list_btn">그랑빌</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn02"><button class="list_btn">더준펜션</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn03"><button class="list_btn">미소게스트하우스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn04"><button class="list_btn">바당다레</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn05"><button class="list_btn">비지터게스트하우스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn06"><button class="list_btn">소랑게스트하우스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn07"><button class="list_btn">스테이 게스트하우스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn08"><button class="list_btn">스파벨리스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn09"><button class="list_btn">우도달그리안펜션</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn10"><button class="list_btn">제이제이게스트하우스</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn11"><button class="list_btn">제주공항게스트하우스고추잠자리</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn12"><button class="list_btn">제주도 간장남들 게스트하우스 파티</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn13"><button class="list_btn">제주도게스트하우스파티성산유쾌한환이네</button></a></td>
+							</tr>
+							<tr>
+								<td><a href="#list_inn14"><button class="list_btn">제주오션뷰2차</button></a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="form-group table_inn col-sm-9">
+						<table id="list_inn01" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>그랑빌</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방 좁음, 시설/물품 노후, 비치물품 고장, 방음 안됨(시끄러움), 침대에서 삐걱 소리남</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 불친절, 고객 응대 미흡</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 모기, 벌레 많음, 객실 내부 냄새남, 객실 청소 미흡, 객실 청소 미흡(먼지), 객실 청소 미흡(머리카락), 이불, 베개에 얼룩 있음</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									다 들리는 방음제로의 수준
+									<br>옆방씻는소리 물소리 방음도하나도안되요
+									<br>시설이 사진보다 낡아서 약간 놀랐어요
+									<br>곰팡이냄새에 사진과
+									<br>침대에 누으니 먼지가 훅선풍기만 있는데 먼지가 심하게
+									<br> 객실에 거미가 나오는
+									<br> 곰팡이가 펴있서
+									<br>내부는 좀 오래되어보여서 그랬습니다
+									<br>괜찮은데 방은 쉰내나서 거실에서
+									<br>떠있는 거보고 더러워서 이용안하고싶었지만 아이때문에
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn02" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>더준펜션</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방 좁음, 시설/물품 노후, 비치물품 고장, 난방 제대로 안됨, 온수 제대로 안나옴</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 고객 응대 미흡</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 청소 미흡, 곰팡이 있음, 벌레 많음, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									친화적이어서 바베큐하다가 지네 나왔습니다
+									<br>날 너무 추워서 몸 좀
+									<br>뭔가 좀 지저분한 느낌이었어요
+									<br> 추워 죽겠는데 반대로는
+									<br>방이 좀 좁지만 하루 묵기
+									<br>연기가 자욱하고 추워서 난로를 틀어달라
+									<br>바베큐장이랑 테라스에 벌레가 많습니다테라스는 날벌레가 너무
+									<br> 정말 최악이네요
+									<br>엄청 추웠어요
+									<br>너무 춥고 허름
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn03" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>미소게스트하우스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>시설/물품 노후, 비치물품 고장, 방음 안됨(시끄러움), 난방 제대로 안됨, 온수 제대로 안나옴, 침대에서 삐걱 소리남</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 모기, 객실 내부 냄새남, 객실 청소 미흡, 객실 청소 미흡(머리카락)</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									밟을 때마다 삐걱삐걱 소리가
+									<br>입실했을때도 화장실에 냄새 변기커버에 오줌찌린자국
+									<br>기타   방문 고장
+									<br>없어서 좀 추웠어요 파티목적으로 가지는
+									<br> 베개에서 냄새가 너무주는 된듯한 냄새였습니다
+									<br>모기너무많아요 
+									<br>화장실 하수구에서 냄새 나고 침구에
+									<br> 모기 소리때문에 잘
+									<br> 모기 매우 많아요
+									<br> 곰팡이
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn04" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>바당다레</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방음 안됨(시끄러움), 난방 제대로 안됨, 시설/물품 노후</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악, 불친절</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 청소 미흡(먼지), 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									방음안됨
+									<br> 밤에 추웠어요
+									<br>춥고 냄새 최악
+									<br>했네요 사장님은 불친절 여성분은 정말
+									<br>하수구냄새가너무심했어요
+									<br>화장실 하수구 냄새
+									<br>화장실에 하수구 냄새 너무 심해요
+									<br> 오래된 건물이라 바닥은
+									<br>하수구 냄새가 너무
+									<br>기대하고 갔는데 방음이 너무너무
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn05" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>비지터게스트하우스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>침대에서 삐걱 소리남, 방음 안됨(시끄러움), 온수 제대로 안나옴, 비치물품 고장</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 청소 미흡, 모기, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									방안에 습한 냄새가 조금
+									<br>침구에서 냄새나서 밤에
+									<br>방에 모기만 엄청
+									<br>수건에서 냄새가 많이
+									<br> 온수가 안나와요
+									<br>보일러가 고장이었는데 입실시에도
+									<br>아주 습하고 냄새가 나요
+									<br>수건은 썪은 냄새가
+									<br> 침대는 삐걱거리고 매트리스도
+									<br>사장님은 친절하셨는데 방음이 안돼서
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn06" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>소랑게스트하우스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방음 안됨(시끄러움), 난방 제대로 안됨, 시설/물품 노후, 침대에서 삐걱 소리남</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>고객 응대 미흡</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 청소 미흡, 곰팡이 있음, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									시설이 좀 오래됐어요
+									<br>늦게주고 수건에서 냄새도 나고
+									<br>보는것보다 너무 낡았습니다
+									<br> 욕먹었습니다
+									<br>화장실에 쿰쿰한 냄새가 나고
+									<br>객실 내 냄새가 별로였고
+									<br>그냥 그랬는데 방음이 안되서
+									<br>그리고 매트릭스가 삐그덕 합니다
+									<br>침구를 안빤것같아서 더러운 상태 그대로를
+									<br>소리까지 다 들렸어요
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn07" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>스테이 게스트하우스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방음 안됨(시끄러움)</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									곰팡이 냄새도 솔직히
+									<br>방안이 춥고 곰팡이냄새같은게 너무
+									<br>유통기한 안지났다더니 곰팡이 엄청 펴있고
+									<br>파티 모두 최악인 이곳은
+									<br>못자고 정말 최악이였어요
+									<br>근데 파티가 최악 이예요 인심제로
+									<br>춥고 곰팡이냄새같은게 너무
+									<br>시 정도에 소음으로인해 강제
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn08" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>스파벨리스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>난방 제대로 안됨, 시설/물품 노후, 비치물품 고장</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 모기, 벌레 많음, 객실 내부 냄새남, 객실 청소 미흡</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									똑같았고 들어갈때의 냄새는 스파
+									<br>방충망은 찢겨져있어서 벌레들이 잘
+									<br>스파를걷으니 벌레가 있었어요
+									<br>화장실은 너무 추워요
+									<br>침구에서 꿉꿉한 냄새가났어요 교환해주셨음
+									<br>복층은 덥고 모기도 많아서
+									<br>스파는 한쪽은 고장나있었네요 나름
+									<br>잔 애들이 추워했네요
+									<br> 방충망은 찢겨져있어서 벌레들이 잘
+									<br>곰팡이가 너무
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn09" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>우도달그리안펜션</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>난방 제대로 안됨, 온수 제대로 안나옴, 시설/물품 노후, 비치물품 고장</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>벌레 많음, 객실 내부 냄새남, 객실 청소 미흡, 객실 청소 미흡(먼지), 객실 청소 미흡(머리카락), 이불, 베개에 얼룩 있음</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 머리카락
+									<br>이불이랑 베게도 먼지 그대로 있어서
+									<br>불량하고 하수구엔 머리카락이 많아
+									<br>시설은 다 고장나고
+									<br>상하고 화장실변기는 더럽고 정원은 웃자란
+									<br>것 처럼 추워서 씻는것도 패스했네요
+									<br>차는 너무 지저분해서 타기가 싫었지만
+									<br>벌레도 너무
+									<br>세탁이 안되어있었고 더러운부분이 곳곳에
+									<br>따뜻한데 공기는 추웠어요
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn10" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제이제이게스트하우스</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>침대에서 삐걱 소리남, 시설/물품 노후, 비치물품 고장</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>모기, 벌레 많음, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 모기에 대한
+									<br>세탁실도 없고 벌레가 많이
+									<br>방향제 냄새가 많이
+									<br>않고 일단 노후된곳도 많았어요
+									<br>  숙소안에 고장난 냉장고는
+									<br> 방에 벌레나오고화장실 샤워실도 벌레때문에 무서웠습니다
+									<br>않아 문은 삐걱 샤워실은 엉망
+									<br>시설이 너무 오래되어 이용하는데 좀
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn11" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제주공항게스트하우스고추잠자리</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>온수 제대로 안나옴</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 청소 미흡, 곰팡이 있음, 객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									더러웠음 화장실에 곰팡이
+									<br>하 화장실 곰팡이
+									<br>좀지저분했어요 걍쉬기엔 좋은데부엌이나
+									<br>냄새나는건 기본이고 곰팡이 천지
+									<br> 청결 냄새나는건 기본이고말리기는 한건지 냄새나고
+									<br>중에 제일 더러웠음 화장실에 곰팡이
+									<br>중에서 결단코 최악이었습니다
+									<br> 난방은 온수 전용만 틀라고
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn12" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제주도 간장남들 게스트하우스 파티</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방음 안됨(시끄러움), 온수 제대로 안나옴</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 벌레 많음, 객실 내부 냄새남, 객실 청소 미흡, 객실 청소 미흡(먼지), 객실 청소 미흡(머리카락), 이불, 베개에 얼룩 있음</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									 방바닥에 먼지며 머리카락이며
+									<br>화장실에서 하수구냄새가 역하게나서
+									<br>냄새나고 휴지도없고 벌레많고
+									<br>바닥에 뒀다 먼지가 뭍어나는
+									<br>다녀봤지만 이렇게 최악인 게스트
+									<br>방바닥에 먼지며 머리카락이며 청소기나
+									<br>숙소 벽에 곰팡이 슬어있고 화장실에서
+									<br> 최악이었습니다 게하
+									<br>안하는지 이불에 머리카락이 그대로있고 바닥에도 머리카락 투성이
+									<br>청결상태가 피 얼룩 같은것도 많고
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn13" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제주도게스트하우스파티성산유쾌한환이네</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>객실 내부 냄새남</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									숙소는 땀냄새 심하고 화장실
+									<br>갔던 게하중에 최악이었음
+									<br>시설 그야말로 최악
+									<br>최악의 게스트하우스
+								</td>
+							</tr>
+						</table>
+						<table id="list_inn14" class="type01" width="100%">
+							<tr>
+								<th>상호명</th>
+								<td>제주오션뷰2차</td>
+							</tr>
+							<tr>
+								<th>시설</th>
+								<td>방 좁음, 난방 제대로 안됨</td>
+							</tr>
+							<tr>
+								<th>서비스</th>
+								<td>최악</td>
+							</tr>
+							<tr>
+								<th>위생</th>
+								<td>곰팡이 있음, 모기, 벌레 많음, 객실 내부 냄새남, 객실 청소 미흡</td>
+							</tr>
+							<tr>
+								<th colspan="2">리뷰 내용 요약</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									냄비뚜껑이 곰팡이가 피어있었어요
+									<br>식이라 덥다가 춥다가
+									<br>생각보다 넘 좁고 
+									<br>아쉬웠고 화장실에서 지네가 나왔어요
+									<br>있었구요 숙소에 드러가자마자 곰팡이 냄새가
+									<br>싱크대 그릇장에는  곰팡이도 슬어있고
+									<br> 모기가 많은
+									<br>모기가 넘무
+									<br> 거미나오고 화장실에서는
+									<br>만원을 내야이용가능하다했는데 더럽고 동네목욕탕같은느낌이라 메리트없어서
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<!-- 3. modal footer -->
 				<div class="modal-footer">
@@ -871,22 +1879,32 @@
 			</table>
 			<br>
 			<div class="folium-map" id="map_7701a7cf59b44b40a2c4bcb75772cf42" style='display:block'></div>
-			<div class="folium-map" id="map_e43f596dd2174b7d80a36a56d9b3f9f3" style='display:block'></div>
+			<div class="folium-map" id="map_499a8205008f46cca72502274e338e8d" style='display:block'></div>
+			<div class="folium-map" id="map_25fc076b5e4242269015f61f069cccb2" style='display:block'></div>
 		</div>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
-			   document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='none';
+				document.querySelector('#map_499a8205008f46cca72502274e338e8d').style.display='none';
+				document.querySelector('#map_25fc076b5e4242269015f61f069cccb2').style.display='none';
 			}, false);
 		</script>
 		<script>
 		    function toggleMapFood() {
 		        document.querySelector('#map_7701a7cf59b44b40a2c4bcb75772cf42').style.display='block';
-		        document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='none';
-
+		        document.querySelector('#map_499a8205008f46cca72502274e338e8d').style.display='none';
+		        document.querySelector('#map_25fc076b5e4242269015f61f069cccb2').style.display='none';
 		    }
+
+		    function toggleMapCafe() {
+		        document.querySelector('#map_7701a7cf59b44b40a2c4bcb75772cf42').style.display='none';
+		        document.querySelector('#map_499a8205008f46cca72502274e338e8d').style.display='block';
+		        document.querySelector('#map_25fc076b5e4242269015f61f069cccb2').style.display='none';
+		    }
+
 		    function toggleMapInn() {
 		    	document.querySelector('#map_7701a7cf59b44b40a2c4bcb75772cf42').style.display='none';
-		        document.querySelector('#map_e43f596dd2174b7d80a36a56d9b3f9f3').style.display='block';
+		        document.querySelector('#map_499a8205008f46cca72502274e338e8d').style.display='none';
+		        document.querySelector('#map_25fc076b5e4242269015f61f069cccb2').style.display='block';
 		    }
 		</script>
 	</div>
@@ -1297,12 +2315,12 @@
     
 </script>
 
-<script>	//숙소
+<script>    //카페
     
-            var map_e43f596dd2174b7d80a36a56d9b3f9f3 = L.map(
-                "map_e43f596dd2174b7d80a36a56d9b3f9f3",
+            var map_499a8205008f46cca72502274e338e8d = L.map(
+                "map_499a8205008f46cca72502274e338e8d",
                 {
-                    center: [33.43408656, 126.65315960000001],
+                    center: [33.40816733125, 126.44847450000002],
                     crs: L.CRS.EPSG3857,
                     zoom: 10,
                     zoomControl: true,
@@ -1314,260 +2332,810 @@
 
         
     
-            var tile_layer_e47cd11cc6db47bb87ba319ba1c7afc1 = L.tileLayer(
+            var tile_layer_ed3db9972b35432e8c56231c56a537f2 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var marker_dcc4a024b0024452b877204415800c62 = L.marker(
-                [33.5151428, 126.95673899999998],
+            var marker_5d3fcf739e3848a9ac0226174e36e05c = L.marker(
+                [33.2443405, 126.41555600000001],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_0035280e839142a3898160bf373b8be1 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_2f29de88a09e4ed2840e89175faae0d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_dcc4a024b0024452b877204415800c62.setIcon(icon_0035280e839142a3898160bf373b8be1);
+            marker_5d3fcf739e3848a9ac0226174e36e05c.setIcon(icon_2f29de88a09e4ed2840e89175faae0d3);
         
     
-        var popup_e32cfe319bf440dba47828a2114a6708 = L.popup({});
+        var popup_54d39e4f454d492e90fc0a3d33ce35d7 = L.popup({});
 
         
-            var html_b56d0fa7e8474fbbab789051b4438ac4 = $(`<div id="html_b56d0fa7e8474fbbab789051b4438ac4" style="width: 100.0%; height: 100.0%;">우도달그리안펜션</div>`)[0];
-            popup_e32cfe319bf440dba47828a2114a6708.setContent(html_b56d0fa7e8474fbbab789051b4438ac4);
+            var html_8a9da588372c4c5488cb8f23db2683ea = $(`<div id="html_8a9da588372c4c5488cb8f23db2683ea" style="width: 100.0%; height: 100.0%;">더클리프</div>`)[0];
+            popup_54d39e4f454d492e90fc0a3d33ce35d7.setContent(html_8a9da588372c4c5488cb8f23db2683ea);
         
 
-        marker_dcc4a024b0024452b877204415800c62.bindPopup(popup_e32cfe319bf440dba47828a2114a6708)
+        marker_5d3fcf739e3848a9ac0226174e36e05c.bindPopup(popup_54d39e4f454d492e90fc0a3d33ce35d7)
         ;
 
         
     
     
-            var marker_9abb69c716084f4899429257306c17d1 = L.marker(
-                [33.256213, 126.41516599999999],
+            var marker_136cf5dc8c8549bea7ad2a869079716b = L.marker(
+                [33.4985569, 126.513713],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_6bf0a438e6f44e509796da993d00187a = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_2da4df7ac7e0434883766ec7f764b2e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_9abb69c716084f4899429257306c17d1.setIcon(icon_6bf0a438e6f44e509796da993d00187a);
+            marker_136cf5dc8c8549bea7ad2a869079716b.setIcon(icon_2da4df7ac7e0434883766ec7f764b2e6);
         
     
-        var popup_a2b7ebb2f6304d31aae23b30089bb31b = L.popup({});
+        var popup_2f29eb6ff812495f8a91f65946bad34f = L.popup({});
 
         
-            var html_c2a2a990d759495aa54bc325a73102f9 = $(`<div id="html_c2a2a990d759495aa54bc325a73102f9" style="width: 100.0%; height: 100.0%;">그랑빌</div>`)[0];
-            popup_a2b7ebb2f6304d31aae23b30089bb31b.setContent(html_c2a2a990d759495aa54bc325a73102f9);
+            var html_9fe6ad95b3964fd0b59569a4cea1318b = $(`<div id="html_9fe6ad95b3964fd0b59569a4cea1318b" style="width: 100.0%; height: 100.0%;">돌카롱 제주공항점</div>`)[0];
+            popup_2f29eb6ff812495f8a91f65946bad34f.setContent(html_9fe6ad95b3964fd0b59569a4cea1318b);
         
 
-        marker_9abb69c716084f4899429257306c17d1.bindPopup(popup_a2b7ebb2f6304d31aae23b30089bb31b)
+        marker_136cf5dc8c8549bea7ad2a869079716b.bindPopup(popup_2f29eb6ff812495f8a91f65946bad34f)
         ;
 
         
     
     
-            var marker_65764496d8ac463ba4350939a4fbb390 = L.marker(
-                [33.5523662, 126.701678],
+            var marker_7ced37df582540ddac30dd035bbfd6fd = L.marker(
+                [33.388543199999994, 126.264909],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_515b61e3eb304560abb1075ade122b21 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_45aed00c751c41b3a76ef099cd3dfa98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_65764496d8ac463ba4350939a4fbb390.setIcon(icon_515b61e3eb304560abb1075ade122b21);
+            marker_7ced37df582540ddac30dd035bbfd6fd.setIcon(icon_45aed00c751c41b3a76ef099cd3dfa98);
         
     
-        var popup_f263d15b440b4d459d7b85fba9840ac3 = L.popup({});
+        var popup_d9c5596e095f471c8b757f3b6f9fbcb9 = L.popup({});
 
         
-            var html_b15ed136546f47a9a7e554729136a9dd = $(`<div id="html_b15ed136546f47a9a7e554729136a9dd" style="width: 100.0%; height: 100.0%;">제주캐슬풀리조트</div>`)[0];
-            popup_f263d15b440b4d459d7b85fba9840ac3.setContent(html_b15ed136546f47a9a7e554729136a9dd);
+            var html_40c2d3c41a6f4eb88aa6818c563d2546 = $(`<div id="html_40c2d3c41a6f4eb88aa6818c563d2546" style="width: 100.0%; height: 100.0%;">명월국민학교</div>`)[0];
+            popup_d9c5596e095f471c8b757f3b6f9fbcb9.setContent(html_40c2d3c41a6f4eb88aa6818c563d2546);
         
 
-        marker_65764496d8ac463ba4350939a4fbb390.bindPopup(popup_f263d15b440b4d459d7b85fba9840ac3)
+        marker_7ced37df582540ddac30dd035bbfd6fd.bindPopup(popup_d9c5596e095f471c8b757f3b6f9fbcb9)
         ;
 
         
     
     
-            var marker_2f48e8d548c64ad6b842f9e4a2b15836 = L.marker(
-                [33.5134184, 126.52383300000001],
+            var marker_8597442a76ec4c2b9a155fa5b6b1370b = L.marker(
+                [33.2690657, 126.180277],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_c4ce992477b7477c80893e9ec5cc6d65 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_649a871ff171452ca5d72897a3d19b40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_2f48e8d548c64ad6b842f9e4a2b15836.setIcon(icon_c4ce992477b7477c80893e9ec5cc6d65);
+            marker_8597442a76ec4c2b9a155fa5b6b1370b.setIcon(icon_649a871ff171452ca5d72897a3d19b40);
         
     
-        var popup_4d02f033ad1b46f48a671ca9f188919a = L.popup({});
+        var popup_4c04d4bd349a4f8e903fd92717a09711 = L.popup({});
 
         
-            var html_6bc779365cef4d679230bee25452b4fb = $(`<div id="html_6bc779365cef4d679230bee25452b4fb" style="width: 100.0%; height: 100.0%;">미소게스트하우스</div>`)[0];
-            popup_4d02f033ad1b46f48a671ca9f188919a.setContent(html_6bc779365cef4d679230bee25452b4fb);
+            var html_fa6970ac93aa4461ad18a3fe70797c48 = $(`<div id="html_fa6970ac93aa4461ad18a3fe70797c48" style="width: 100.0%; height: 100.0%;">미쁜제과</div>`)[0];
+            popup_4c04d4bd349a4f8e903fd92717a09711.setContent(html_fa6970ac93aa4461ad18a3fe70797c48);
         
 
-        marker_2f48e8d548c64ad6b842f9e4a2b15836.bindPopup(popup_4d02f033ad1b46f48a671ca9f188919a)
+        marker_8597442a76ec4c2b9a155fa5b6b1370b.bindPopup(popup_4c04d4bd349a4f8e903fd92717a09711)
         ;
 
         
     
     
-            var marker_0ef3ea44abd04b34bb756b1c7a41f69d = L.marker(
-                [33.5260752, 126.788404],
+            var marker_5a6778b8093c47918ead7210e0b54e5c = L.marker(
+                [33.237406, 126.436771],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_28660a75af5d413daa3243b9e487fd39 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_3ea16060c8954854a55f207de143c2b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_0ef3ea44abd04b34bb756b1c7a41f69d.setIcon(icon_28660a75af5d413daa3243b9e487fd39);
+            marker_5a6778b8093c47918ead7210e0b54e5c.setIcon(icon_3ea16060c8954854a55f207de143c2b0);
         
     
-        var popup_a2e967558bd14e1cb0d6f1b13598acba = L.popup({});
+        var popup_779e8754dd4d4857a42227589ad9f44d = L.popup({});
 
         
-            var html_6ad805037d08417cbb51de8fb3cb8e9c = $(`<div id="html_6ad805037d08417cbb51de8fb3cb8e9c" style="width: 100.0%; height: 100.0%;">제주오션뷰2차</div>`)[0];
-            popup_a2e967558bd14e1cb0d6f1b13598acba.setContent(html_6ad805037d08417cbb51de8fb3cb8e9c);
+            var html_0d83c58e018143119e61676a57b7d4a0 = $(`<div id="html_0d83c58e018143119e61676a57b7d4a0" style="width: 100.0%; height: 100.0%;">바다다</div>`)[0];
+            popup_779e8754dd4d4857a42227589ad9f44d.setContent(html_0d83c58e018143119e61676a57b7d4a0);
         
 
-        marker_0ef3ea44abd04b34bb756b1c7a41f69d.bindPopup(popup_a2e967558bd14e1cb0d6f1b13598acba)
+        marker_5a6778b8093c47918ead7210e0b54e5c.bindPopup(popup_779e8754dd4d4857a42227589ad9f44d)
         ;
 
         
     
     
-            var marker_536e59b5885143f88c2ae4c8a77a01e1 = L.marker(
-                [33.4948913, 126.62315],
+            var marker_5d5f7c81e7c64ca3999f0b51c4ac207e = L.marker(
+                [33.516991499999996, 126.95804],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_7ee26ce56b1d43359383742cfd849476 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_82bce2d0c82c499f971227fdde20fe55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_536e59b5885143f88c2ae4c8a77a01e1.setIcon(icon_7ee26ce56b1d43359383742cfd849476);
+            marker_5d5f7c81e7c64ca3999f0b51c4ac207e.setIcon(icon_82bce2d0c82c499f971227fdde20fe55);
         
     
-        var popup_7f94902bbed94d7faa48b1740ff902ef = L.popup({});
+        var popup_42b14bcda7794f5ca4e3849e61b6556d = L.popup({});
 
         
-            var html_aacc692fef714719bcf7284c2ca4afe8 = $(`<div id="html_aacc692fef714719bcf7284c2ca4afe8" style="width: 100.0%; height: 100.0%;">스파벨리스</div>`)[0];
-            popup_7f94902bbed94d7faa48b1740ff902ef.setContent(html_aacc692fef714719bcf7284c2ca4afe8);
+            var html_b2f60c3aeab849b09a6c5ad90e25fa33 = $(`<div id="html_b2f60c3aeab849b09a6c5ad90e25fa33" style="width: 100.0%; height: 100.0%;">블랑로쉐</div>`)[0];
+            popup_42b14bcda7794f5ca4e3849e61b6556d.setContent(html_b2f60c3aeab849b09a6c5ad90e25fa33);
         
 
-        marker_536e59b5885143f88c2ae4c8a77a01e1.bindPopup(popup_7f94902bbed94d7faa48b1740ff902ef)
+        marker_5d5f7c81e7c64ca3999f0b51c4ac207e.bindPopup(popup_42b14bcda7794f5ca4e3849e61b6556d)
         ;
 
         
     
     
-            var marker_ffa33c67b1544c50a082d9fcfc0f49f2 = L.marker(
-                [33.5549924, 126.795612],
+            var marker_c412f3e0e965464a9c3926f34629a7b8 = L.marker(
+                [33.5177361, 126.498547],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_64ec382680f34f7ab1a6995b5b78d964 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_aa7e18037cdd48a0863db252493a139d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_ffa33c67b1544c50a082d9fcfc0f49f2.setIcon(icon_64ec382680f34f7ab1a6995b5b78d964);
+            marker_c412f3e0e965464a9c3926f34629a7b8.setIcon(icon_aa7e18037cdd48a0863db252493a139d);
         
     
-        var popup_a5b346333e304585a8b14812435ecd45 = L.popup({});
+        var popup_d2d3ded449dd489ebbca453433c2f206 = L.popup({});
 
         
-            var html_7e5c9a657fbb4c32832c17a8b3f18b70 = $(`<div id="html_7e5c9a657fbb4c32832c17a8b3f18b70" style="width: 100.0%; height: 100.0%;">제주도 간장남들 게스트하우스 파티</div>`)[0];
-            popup_a5b346333e304585a8b14812435ecd45.setContent(html_7e5c9a657fbb4c32832c17a8b3f18b70);
+            var html_ce3084e7a84f4c4dae6eb8f7c97e8e9e = $(`<div id="html_ce3084e7a84f4c4dae6eb8f7c97e8e9e" style="width: 100.0%; height: 100.0%;">섬마을청년회관</div>`)[0];
+            popup_d2d3ded449dd489ebbca453433c2f206.setContent(html_ce3084e7a84f4c4dae6eb8f7c97e8e9e);
         
 
-        marker_ffa33c67b1544c50a082d9fcfc0f49f2.bindPopup(popup_a5b346333e304585a8b14812435ecd45)
+        marker_c412f3e0e965464a9c3926f34629a7b8.bindPopup(popup_d2d3ded449dd489ebbca453433c2f206)
         ;
 
         
     
     
-            var marker_de066bc447714fddbcc37623e51915fb = L.marker(
-                [33.2591486, 126.41058500000001],
+            var marker_5c788797db394c588f88df3b8944e3e0 = L.marker(
+                [33.5161637, 126.50884599999999],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_a61b31caa93d42879d5bd3cfec53bd8e = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_cc7c36c066be48f899a27e9512672f28 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_de066bc447714fddbcc37623e51915fb.setIcon(icon_a61b31caa93d42879d5bd3cfec53bd8e);
+            marker_5c788797db394c588f88df3b8944e3e0.setIcon(icon_cc7c36c066be48f899a27e9512672f28);
         
     
-        var popup_4aeb9be1aac6412db5b5f3129c42a804 = L.popup({});
+        var popup_38c58edd61074341a656f57b299a54c6 = L.popup({});
 
         
-            var html_808b5283f91c418eb17f184ca9648bc3 = $(`<div id="html_808b5283f91c418eb17f184ca9648bc3" style="width: 100.0%; height: 100.0%;">스테이 게스트하우스</div>`)[0];
-            popup_4aeb9be1aac6412db5b5f3129c42a804.setContent(html_808b5283f91c418eb17f184ca9648bc3);
+            var html_dfcfc7d7617446199943e02e545da28b = $(`<div id="html_dfcfc7d7617446199943e02e545da28b" style="width: 100.0%; height: 100.0%;">앙뚜아네트 용담점</div>`)[0];
+            popup_38c58edd61074341a656f57b299a54c6.setContent(html_dfcfc7d7617446199943e02e545da28b);
         
 
-        marker_de066bc447714fddbcc37623e51915fb.bindPopup(popup_4aeb9be1aac6412db5b5f3129c42a804)
+        marker_5c788797db394c588f88df3b8944e3e0.bindPopup(popup_38c58edd61074341a656f57b299a54c6)
         ;
 
         
     
     
-            var marker_e20ff23ca6634543b474574e307fb18b = L.marker(
-                [33.2558585, 126.416477],
+            var marker_1e0c3e47520d477cab9aa9753ea2601d = L.marker(
+                [33.480637, 126.472822],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_2652507a86be489393119aa6e8a1ae42 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_8a352c65345d4a9b951f7f0f19a355f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_e20ff23ca6634543b474574e307fb18b.setIcon(icon_2652507a86be489393119aa6e8a1ae42);
+            marker_1e0c3e47520d477cab9aa9753ea2601d.setIcon(icon_8a352c65345d4a9b951f7f0f19a355f9);
         
     
-        var popup_709cd09df601420ebd8486adef2bbdca = L.popup({});
+        var popup_6164ced19dc543c996ecb422fee9b28a = L.popup({});
 
         
-            var html_447f86f59189453e9418ebfc8d28fc68 = $(`<div id="html_447f86f59189453e9418ebfc8d28fc68" style="width: 100.0%; height: 100.0%;">제이제이게스트하우스</div>`)[0];
-            popup_709cd09df601420ebd8486adef2bbdca.setContent(html_447f86f59189453e9418ebfc8d28fc68);
+            var html_e2e0269840394bdab7b96eae76e5c6d6 = $(`<div id="html_e2e0269840394bdab7b96eae76e5c6d6" style="width: 100.0%; height: 100.0%;">에스프레소 라운지</div>`)[0];
+            popup_6164ced19dc543c996ecb422fee9b28a.setContent(html_e2e0269840394bdab7b96eae76e5c6d6);
         
 
-        marker_e20ff23ca6634543b474574e307fb18b.bindPopup(popup_709cd09df601420ebd8486adef2bbdca)
+        marker_1e0c3e47520d477cab9aa9753ea2601d.bindPopup(popup_6164ced19dc543c996ecb422fee9b28a)
         ;
 
         
     
     
-            var marker_398b5d737d9747abbcd497c147907b36 = L.marker(
-                [33.4127592, 126.899952],
+            var marker_9ad1cb98377744d4aadf0d788f5db578 = L.marker(
+                [33.5129705, 126.51071599999999],
                 {}
-            ).addTo(map_e43f596dd2174b7d80a36a56d9b3f9f3);
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
         
     
-            var icon_315a6ad9e321427e990f4f651e7f3933 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_8379930085b94658b9583840e37a0d2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_398b5d737d9747abbcd497c147907b36.setIcon(icon_315a6ad9e321427e990f4f651e7f3933);
+            marker_9ad1cb98377744d4aadf0d788f5db578.setIcon(icon_8379930085b94658b9583840e37a0d2c);
         
     
-        var popup_6f1aef4cd7be4c769c8ec30bd70112d4 = L.popup({});
+        var popup_ecf0c2c04db64369a1c8d3ca8144d982 = L.popup({});
 
         
-            var html_26322b3088544510b9ee4638c7e9a4b8 = $(`<div id="html_26322b3088544510b9ee4638c7e9a4b8" style="width: 100.0%; height: 100.0%;">제주도게스트하우스파티성산유쾌한환이네</div>`)[0];
-            popup_6f1aef4cd7be4c769c8ec30bd70112d4.setContent(html_26322b3088544510b9ee4638c7e9a4b8);
+            var html_feabb355157d4fd8a43d469d3c676148 = $(`<div id="html_feabb355157d4fd8a43d469d3c676148" style="width: 100.0%; height: 100.0%;">용두암오메기떡</div>`)[0];
+            popup_ecf0c2c04db64369a1c8d3ca8144d982.setContent(html_feabb355157d4fd8a43d469d3c676148);
         
 
-        marker_398b5d737d9747abbcd497c147907b36.bindPopup(popup_6f1aef4cd7be4c769c8ec30bd70112d4)
+        marker_9ad1cb98377744d4aadf0d788f5db578.bindPopup(popup_ecf0c2c04db64369a1c8d3ca8144d982)
+        ;
+
+        
+    
+    
+            var marker_e80965f4f5d2424faee3ffbc2c5c7b8f = L.marker(
+                [33.3476644, 126.328291],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_72df4df8ad634bb993839f701c657d70 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e80965f4f5d2424faee3ffbc2c5c7b8f.setIcon(icon_72df4df8ad634bb993839f701c657d70);
+        
+    
+        var popup_20dca1940fba48148fd1907c455ab8f8 = L.popup({});
+
+        
+            var html_c3af2fbce4eb4724b27dfb60333fcd0e = $(`<div id="html_c3af2fbce4eb4724b27dfb60333fcd0e" style="width: 100.0%; height: 100.0%;">우유부단</div>`)[0];
+            popup_20dca1940fba48148fd1907c455ab8f8.setContent(html_c3af2fbce4eb4724b27dfb60333fcd0e);
+        
+
+        marker_e80965f4f5d2424faee3ffbc2c5c7b8f.bindPopup(popup_20dca1940fba48148fd1907c455ab8f8)
+        ;
+
+        
+    
+    
+            var marker_cc1726b6d06c4f8b9d47e3a9ab9737e0 = L.marker(
+                [33.2392252, 126.31943500000001],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_6d0d33a0eb8443b9ba1d504d88bc2d67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cc1726b6d06c4f8b9d47e3a9ab9737e0.setIcon(icon_6d0d33a0eb8443b9ba1d504d88bc2d67);
+        
+    
+        var popup_4b8dc280061444d89a0d2074714cde67 = L.popup({});
+
+        
+            var html_2ddb6a7d11f24ba0a722f651c8b3c5c7 = $(`<div id="html_2ddb6a7d11f24ba0a722f651c8b3c5c7" style="width: 100.0%; height: 100.0%;">원앤온리</div>`)[0];
+            popup_4b8dc280061444d89a0d2074714cde67.setContent(html_2ddb6a7d11f24ba0a722f651c8b3c5c7);
+        
+
+        marker_cc1726b6d06c4f8b9d47e3a9ab9737e0.bindPopup(popup_4b8dc280061444d89a0d2074714cde67)
+        ;
+
+        
+    
+    
+            var marker_4e6ff52eb7224e6da459bd0646b6e7d3 = L.marker(
+                [33.4479784, 126.914947],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_82aa9de7ba424ec79d9170a424d6817d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4e6ff52eb7224e6da459bd0646b6e7d3.setIcon(icon_82aa9de7ba424ec79d9170a424d6817d);
+        
+    
+        var popup_15027ce8dc8e4b6297b986302a1c9e1c = L.popup({});
+
+        
+            var html_9c52a51019754e3a8b1f3b94b55f8e0e = $(`<div id="html_9c52a51019754e3a8b1f3b94b55f8e0e" style="width: 100.0%; height: 100.0%;">제일성심당</div>`)[0];
+            popup_15027ce8dc8e4b6297b986302a1c9e1c.setContent(html_9c52a51019754e3a8b1f3b94b55f8e0e);
+        
+
+        marker_4e6ff52eb7224e6da459bd0646b6e7d3.bindPopup(popup_15027ce8dc8e4b6297b986302a1c9e1c)
+        ;
+
+        
+    
+    
+            var marker_6cbab5f1111e42319f968052f29e9e1e = L.marker(
+                [33.460476, 126.311146],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_8333f9e9309a4f3dbf1604cb5fa14776 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6cbab5f1111e42319f968052f29e9e1e.setIcon(icon_8333f9e9309a4f3dbf1604cb5fa14776);
+        
+    
+        var popup_c007f921cdb24f3a920fa8a532c04aa6 = L.popup({});
+
+        
+            var html_0907b911cd364614875d3673d715ff7b = $(`<div id="html_0907b911cd364614875d3673d715ff7b" style="width: 100.0%; height: 100.0%;">지금이순간카페</div>`)[0];
+            popup_c007f921cdb24f3a920fa8a532c04aa6.setContent(html_0907b911cd364614875d3673d715ff7b);
+        
+
+        marker_6cbab5f1111e42319f968052f29e9e1e.bindPopup(popup_c007f921cdb24f3a920fa8a532c04aa6)
+        ;
+
+        
+    
+    
+            var marker_8966b5b29c0547bf86801883e8ee49a7 = L.marker(
+                [33.3893106, 126.232381],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_4bbe70cbf11c44c0ac67ce1523aa649c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8966b5b29c0547bf86801883e8ee49a7.setIcon(icon_4bbe70cbf11c44c0ac67ce1523aa649c);
+        
+    
+        var popup_3d1da5cd8d5545ebb4d3f22f18bceb74 = L.popup({});
+
+        
+            var html_1a8109db0ac744fcb6ad92808cf62788 = $(`<div id="html_1a8109db0ac744fcb6ad92808cf62788" style="width: 100.0%; height: 100.0%;">파라토도스</div>`)[0];
+            popup_3d1da5cd8d5545ebb4d3f22f18bceb74.setContent(html_1a8109db0ac744fcb6ad92808cf62788);
+        
+
+        marker_8966b5b29c0547bf86801883e8ee49a7.bindPopup(popup_3d1da5cd8d5545ebb4d3f22f18bceb74)
+        ;
+
+        
+    
+    
+            var marker_2a7a6972888d4dbcb9e4ac6ddbd5d774 = L.marker(
+                [33.46361160000001, 126.30919499999999],
+                {}
+            ).addTo(map_499a8205008f46cca72502274e338e8d);
+        
+    
+            var icon_d862e61767b94d438b4ea07409047e4f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2a7a6972888d4dbcb9e4ac6ddbd5d774.setIcon(icon_d862e61767b94d438b4ea07409047e4f);
+        
+    
+        var popup_599df68a382b40569deb0bff9ca88f03 = L.popup({});
+
+        
+            var html_d48170f188964efbaf7f3a976e9bfaaa = $(`<div id="html_d48170f188964efbaf7f3a976e9bfaaa" style="width: 100.0%; height: 100.0%;">하이엔드제주</div>`)[0];
+            popup_599df68a382b40569deb0bff9ca88f03.setContent(html_d48170f188964efbaf7f3a976e9bfaaa);
+        
+
+        marker_2a7a6972888d4dbcb9e4ac6ddbd5d774.bindPopup(popup_599df68a382b40569deb0bff9ca88f03)
         ;
 
         
     
 </script>
+
+<script>    //숙소
+    
+            var map_25fc076b5e4242269015f61f069cccb2 = L.map(
+                "map_25fc076b5e4242269015f61f069cccb2",
+                {
+                    center: [33.44037816666666, 126.57459246666666],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6895790a6cd34f34a1fc9ff2eedd16fc = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var marker_df535c1e2d8b44d5a892bbd5cbb4f029 = L.marker(
+                [33.256213, 126.41516599999999],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_8b60c99582ab48748c827050edd955e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_df535c1e2d8b44d5a892bbd5cbb4f029.setIcon(icon_8b60c99582ab48748c827050edd955e1);
+        
+    
+        var popup_1d277c16e9f5428fbe9984a4f05a2ee7 = L.popup({});
+
+        
+            var html_8b2d7654d91b47e5bf38cec4008bcd7d = $(`<div id="html_8b2d7654d91b47e5bf38cec4008bcd7d" style="width: 100.0%; height: 100.0%;">그랑빌</div>`)[0];
+            popup_1d277c16e9f5428fbe9984a4f05a2ee7.setContent(html_8b2d7654d91b47e5bf38cec4008bcd7d);
+        
+
+        marker_df535c1e2d8b44d5a892bbd5cbb4f029.bindPopup(popup_1d277c16e9f5428fbe9984a4f05a2ee7)
+        ;
+
+        
+    
+    
+            var marker_373439f4bfbb470db4097eff7102c09a = L.marker(
+                [33.4845821, 126.610251],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_2376d8135a4841e6a3bdd3f54e3a830f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_373439f4bfbb470db4097eff7102c09a.setIcon(icon_2376d8135a4841e6a3bdd3f54e3a830f);
+        
+    
+        var popup_2176f2ec88fd499e8969673da6a69bb4 = L.popup({});
+
+        
+            var html_b62510947b334e49ad98cf966cf945f8 = $(`<div id="html_b62510947b334e49ad98cf966cf945f8" style="width: 100.0%; height: 100.0%;">더준펜션</div>`)[0];
+            popup_2176f2ec88fd499e8969673da6a69bb4.setContent(html_b62510947b334e49ad98cf966cf945f8);
+        
+
+        marker_373439f4bfbb470db4097eff7102c09a.bindPopup(popup_2176f2ec88fd499e8969673da6a69bb4)
+        ;
+
+        
+    
+    
+            var marker_2bba477c8aaa40a4932645a2645e316d = L.marker(
+                [33.5134184, 126.52383300000001],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_f900607cf6ce4588b03c3c5b67c8dbe7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2bba477c8aaa40a4932645a2645e316d.setIcon(icon_f900607cf6ce4588b03c3c5b67c8dbe7);
+        
+    
+        var popup_242e45c88831417d8ed0b9a604531a35 = L.popup({});
+
+        
+            var html_788a31990b03400d9831e659f25cbc08 = $(`<div id="html_788a31990b03400d9831e659f25cbc08" style="width: 100.0%; height: 100.0%;">미소게스트하우스</div>`)[0];
+            popup_242e45c88831417d8ed0b9a604531a35.setContent(html_788a31990b03400d9831e659f25cbc08);
+        
+
+        marker_2bba477c8aaa40a4932645a2645e316d.bindPopup(popup_242e45c88831417d8ed0b9a604531a35)
+        ;
+
+        
+    
+    
+            var marker_9dd4dcfe054647a4abc62fe547002230 = L.marker(
+                [33.3923947, 126.239802],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_baec6dbf4ead4d36921c5e6c21211f92 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9dd4dcfe054647a4abc62fe547002230.setIcon(icon_baec6dbf4ead4d36921c5e6c21211f92);
+        
+    
+        var popup_0fa39722e95a49de92437516a70d043d = L.popup({});
+
+        
+            var html_00f7f123f40f4cb1a9577d1643f63d95 = $(`<div id="html_00f7f123f40f4cb1a9577d1643f63d95" style="width: 100.0%; height: 100.0%;">바당다레</div>`)[0];
+            popup_0fa39722e95a49de92437516a70d043d.setContent(html_00f7f123f40f4cb1a9577d1643f63d95);
+        
+
+        marker_9dd4dcfe054647a4abc62fe547002230.bindPopup(popup_0fa39722e95a49de92437516a70d043d)
+        ;
+
+        
+    
+    
+            var marker_8ac13ea712914e28a84c8792c1c0d9c7 = L.marker(
+                [33.5123779, 126.525217],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_168c1e6ec8c54fce87556a85fc04a50c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8ac13ea712914e28a84c8792c1c0d9c7.setIcon(icon_168c1e6ec8c54fce87556a85fc04a50c);
+        
+    
+        var popup_3ef2e145c5aa480183f4ef1335c4a32c = L.popup({});
+
+        
+            var html_69e5be8468c648ba96613a09c9549feb = $(`<div id="html_69e5be8468c648ba96613a09c9549feb" style="width: 100.0%; height: 100.0%;">비지터게스트하우스</div>`)[0];
+            popup_3ef2e145c5aa480183f4ef1335c4a32c.setContent(html_69e5be8468c648ba96613a09c9549feb);
+        
+
+        marker_8ac13ea712914e28a84c8792c1c0d9c7.bindPopup(popup_3ef2e145c5aa480183f4ef1335c4a32c)
+        ;
+
+        
+    
+    
+            var marker_afcbae81e81948d1a92a647fb8cd9e50 = L.marker(
+                [33.378718400000004, 126.21676299999999],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_df1192ea76194812b76af99dae87fb16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_afcbae81e81948d1a92a647fb8cd9e50.setIcon(icon_df1192ea76194812b76af99dae87fb16);
+        
+    
+        var popup_457c69672329426e8ab2de706733fbff = L.popup({});
+
+        
+            var html_ac8793c9b71c4e248157a7eca36cc6ad = $(`<div id="html_ac8793c9b71c4e248157a7eca36cc6ad" style="width: 100.0%; height: 100.0%;">소랑게스트하우스</div>`)[0];
+            popup_457c69672329426e8ab2de706733fbff.setContent(html_ac8793c9b71c4e248157a7eca36cc6ad);
+        
+
+        marker_afcbae81e81948d1a92a647fb8cd9e50.bindPopup(popup_457c69672329426e8ab2de706733fbff)
+        ;
+
+        
+    
+    
+            var marker_3874deadb9b64fd1bce2b48001ffeb3e = L.marker(
+                [33.2591486, 126.41058500000001],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_f58970bb732a433ea8e2df5cc1ed6654 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3874deadb9b64fd1bce2b48001ffeb3e.setIcon(icon_f58970bb732a433ea8e2df5cc1ed6654);
+        
+    
+        var popup_1a083dddfebb4e189e69528095316002 = L.popup({});
+
+        
+            var html_dff3d9428c9f40e583fc959832f20297 = $(`<div id="html_dff3d9428c9f40e583fc959832f20297" style="width: 100.0%; height: 100.0%;">스테이 게스트하우스</div>`)[0];
+            popup_1a083dddfebb4e189e69528095316002.setContent(html_dff3d9428c9f40e583fc959832f20297);
+        
+
+        marker_3874deadb9b64fd1bce2b48001ffeb3e.bindPopup(popup_1a083dddfebb4e189e69528095316002)
+        ;
+
+        
+    
+    
+            var marker_2415be5d8d4745b296f7fc24f96ece2d = L.marker(
+                [33.4948913, 126.62315],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_7a66189805fd446da3efe36e772d5de1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2415be5d8d4745b296f7fc24f96ece2d.setIcon(icon_7a66189805fd446da3efe36e772d5de1);
+        
+    
+        var popup_a5c9100f64154f6190ac524e7967d7e6 = L.popup({});
+
+        
+            var html_c2c8ce7561a04641b1c04414593f543b = $(`<div id="html_c2c8ce7561a04641b1c04414593f543b" style="width: 100.0%; height: 100.0%;">스파벨리스</div>`)[0];
+            popup_a5c9100f64154f6190ac524e7967d7e6.setContent(html_c2c8ce7561a04641b1c04414593f543b);
+        
+
+        marker_2415be5d8d4745b296f7fc24f96ece2d.bindPopup(popup_a5c9100f64154f6190ac524e7967d7e6)
+        ;
+
+        
+    
+    
+            var marker_855f3af9844b4aac92f98f83c7fce0de = L.marker(
+                [33.5151428, 126.95673899999998],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_6daaf0f161f7467babd689957047cf5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_855f3af9844b4aac92f98f83c7fce0de.setIcon(icon_6daaf0f161f7467babd689957047cf5c);
+        
+    
+        var popup_248788daad8644f9b213271e0ce7d4bf = L.popup({});
+
+        
+            var html_d0a99729b9404225a5f7c2cfb8a5b5b6 = $(`<div id="html_d0a99729b9404225a5f7c2cfb8a5b5b6" style="width: 100.0%; height: 100.0%;">우도달그리안펜션</div>`)[0];
+            popup_248788daad8644f9b213271e0ce7d4bf.setContent(html_d0a99729b9404225a5f7c2cfb8a5b5b6);
+        
+
+        marker_855f3af9844b4aac92f98f83c7fce0de.bindPopup(popup_248788daad8644f9b213271e0ce7d4bf)
+        ;
+
+        
+    
+    
+            var marker_ea38006447554478b05df2ef16a43f19 = L.marker(
+                [33.2558585, 126.416477],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_250045e73728490cb1d00e3a43543f5b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ea38006447554478b05df2ef16a43f19.setIcon(icon_250045e73728490cb1d00e3a43543f5b);
+        
+    
+        var popup_6ef69a0fab394bbc97463073b1bf8395 = L.popup({});
+
+        
+            var html_b46e363cc3e64a1091c8a7656d6851a4 = $(`<div id="html_b46e363cc3e64a1091c8a7656d6851a4" style="width: 100.0%; height: 100.0%;">제이제이게스트하우스</div>`)[0];
+            popup_6ef69a0fab394bbc97463073b1bf8395.setContent(html_b46e363cc3e64a1091c8a7656d6851a4);
+        
+
+        marker_ea38006447554478b05df2ef16a43f19.bindPopup(popup_6ef69a0fab394bbc97463073b1bf8395)
+        ;
+
+        
+    
+    
+            var marker_2d1cd49808cc4b45af138836c95b66e3 = L.marker(
+                [33.4967338, 126.495258],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_8633b3e06a9b4c0cabef3f114e47c5c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2d1cd49808cc4b45af138836c95b66e3.setIcon(icon_8633b3e06a9b4c0cabef3f114e47c5c9);
+        
+    
+        var popup_670f73eb671d4842817d011221bb215d = L.popup({});
+
+        
+            var html_4770f290a6a848c19b613e45be22142c = $(`<div id="html_4770f290a6a848c19b613e45be22142c" style="width: 100.0%; height: 100.0%;">제주공항게스트하우스고추잠자리</div>`)[0];
+            popup_670f73eb671d4842817d011221bb215d.setContent(html_4770f290a6a848c19b613e45be22142c);
+        
+
+        marker_2d1cd49808cc4b45af138836c95b66e3.bindPopup(popup_670f73eb671d4842817d011221bb215d)
+        ;
+
+        
+    
+    
+            var marker_6d12555ceefa49608b3c0920d04c2540 = L.marker(
+                [33.5549924, 126.795612],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_6bb356c7273148378b71a21d512cf495 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6d12555ceefa49608b3c0920d04c2540.setIcon(icon_6bb356c7273148378b71a21d512cf495);
+        
+    
+        var popup_1c9c8b1aa2254d79a218d2a224ab9719 = L.popup({});
+
+        
+            var html_4f9e66dfc2da4ffd8dcaabdd4a12fec1 = $(`<div id="html_4f9e66dfc2da4ffd8dcaabdd4a12fec1" style="width: 100.0%; height: 100.0%;">제주도 간장남들 게스트하우스 파티</div>`)[0];
+            popup_1c9c8b1aa2254d79a218d2a224ab9719.setContent(html_4f9e66dfc2da4ffd8dcaabdd4a12fec1);
+        
+
+        marker_6d12555ceefa49608b3c0920d04c2540.bindPopup(popup_1c9c8b1aa2254d79a218d2a224ab9719)
+        ;
+
+        
+    
+    
+            var marker_2ec962f8ceb4477b97ffaee0cdaccbe4 = L.marker(
+                [33.4127592, 126.899952],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_db9d3a1020d4479f90091800623e90f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2ec962f8ceb4477b97ffaee0cdaccbe4.setIcon(icon_db9d3a1020d4479f90091800623e90f0);
+        
+    
+        var popup_a7c1efaf6763428fa8ca3a23551dcf8d = L.popup({});
+
+        
+            var html_71ed2e69c9b14b538672a460c35216d7 = $(`<div id="html_71ed2e69c9b14b538672a460c35216d7" style="width: 100.0%; height: 100.0%;">제주도게스트하우스파티성산유쾌한환이네</div>`)[0];
+            popup_a7c1efaf6763428fa8ca3a23551dcf8d.setContent(html_71ed2e69c9b14b538672a460c35216d7);
+        
+
+        marker_2ec962f8ceb4477b97ffaee0cdaccbe4.bindPopup(popup_a7c1efaf6763428fa8ca3a23551dcf8d)
+        ;
+
+        
+    
+    
+            var marker_f8f98de858b04eab963b0e850d107fb7 = L.marker(
+                [33.5260752, 126.788404],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_cba64c9371a74488aac5b2e63b42de75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f8f98de858b04eab963b0e850d107fb7.setIcon(icon_cba64c9371a74488aac5b2e63b42de75);
+        
+    
+        var popup_91733c34e99f438f84969a9d22a6867b = L.popup({});
+
+        
+            var html_63abd92fb87949d08790c1985dcb28d3 = $(`<div id="html_63abd92fb87949d08790c1985dcb28d3" style="width: 100.0%; height: 100.0%;">제주오션뷰2차</div>`)[0];
+            popup_91733c34e99f438f84969a9d22a6867b.setContent(html_63abd92fb87949d08790c1985dcb28d3);
+        
+
+        marker_f8f98de858b04eab963b0e850d107fb7.bindPopup(popup_91733c34e99f438f84969a9d22a6867b)
+        ;
+
+        
+    
+    
+            var marker_8dc88b4217d142d1ad96ab5d6c27bb18 = L.marker(
+                [33.5523662, 126.701678],
+                {}
+            ).addTo(map_25fc076b5e4242269015f61f069cccb2);
+        
+    
+            var icon_1d908aa277844a089ae864743fa8ce8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8dc88b4217d142d1ad96ab5d6c27bb18.setIcon(icon_1d908aa277844a089ae864743fa8ce8a);
+        
+    
+        var popup_1163b1aeadc04d249ea7a05a45143563 = L.popup({});
+
+        
+            var html_0d399908baf441d7b38ffdf0a0003236 = $(`<div id="html_0d399908baf441d7b38ffdf0a0003236" style="width: 100.0%; height: 100.0%;">제주캐슬풀리조트</div>`)[0];
+            popup_1163b1aeadc04d249ea7a05a45143563.setContent(html_0d399908baf441d7b38ffdf0a0003236);
+        
+
+        marker_8dc88b4217d142d1ad96ab5d6c27bb18.bindPopup(popup_1163b1aeadc04d249ea7a05a45143563)
+        ;
+
+        
+    
+</script>
+
 </html>
