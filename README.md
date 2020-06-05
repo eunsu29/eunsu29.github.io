@@ -3,7 +3,7 @@
 해당 업체들 부정 리뷰 내용 분석 및 요약<br><br>
 
 #### 내용 요약 (selenium,  konlpy, nltk, keras, folium 패키지 사용)
-selenium패키지를 통한 웹스크래핑(리뷰 수집) 후 데이터 전처리 후 csv파일로 저장<br>
+selenium패키지를 통한 웹스크래핑(리뷰 수집) 후 데이터 전처리 후 csv파일로 저장<br>(https://store.naver.com/restaurants/list?bounds=121.0849205%3B34.184039%3B135.1364342%3B40.9669969&query=%EB%A7%9B%EC%A7%91&sessionid=dErvWZ6KBTCFitPSlhnkhdDu&sortingOrder=reviewCount)<br>
 konlpy패키지의 okt.pos()함수를 사용하여 리뷰 토큰화, ntlk로 빈도수 상위 10000개 토큰 선정<br>
 keras패키지를 통한 모델 학습으로 긍정/부정 리뷰 판단(https://wikidocs.net/24559)<br>
 folium패키지로 지도 위에 시각화<br><br>
