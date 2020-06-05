@@ -1,7 +1,6 @@
 ### 리뷰 감성 분석(긍/부정 판단)
-#### selenium,  konlpy, nltk, keras, folium 패키지 사용
 업체별 총 리뷰 50개 이상, 부정 리뷰 20% 이상인 업체 리스트 작성(음식점 기준)<br>
-해당 업체들 부정 리뷰 내용 분석 및 요약<br><br>
+해당 업체들 부정 리뷰 내용 분석 및 요약(selenium,  konlpy, nltk, keras, folium 패키지 사용)<br><br>
 
 #### 내용 요약
 selenium패키지를 통한 웹스크래핑(리뷰 수집) 후 데이터 전처리 후 csv파일로 저장<br>
