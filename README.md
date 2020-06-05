@@ -1,8 +1,8 @@
 ### 리뷰 감성 분석(긍/부정 판단)
 업체별 총 리뷰 50개 이상, 부정 리뷰 20% 이상인 업체 리스트 작성(음식점 기준)<br>
-해당 업체들 부정 리뷰 내용 분석 및 요약(selenium,  konlpy, nltk, keras, folium 패키지 사용)<br><br>
+해당 업체들 부정 리뷰 내용 분석 및 요약<br><br>
 
-#### 내용 요약
+#### 내용 요약 (selenium,  konlpy, nltk, keras, folium 패키지 사용)
 selenium패키지를 통한 웹스크래핑(리뷰 수집) 후 데이터 전처리 후 csv파일로 저장<br>
 konlpy패키지의 okt.pos()함수를 사용하여 리뷰 토큰화, ntlk로 빈도수 상위 10000개 토큰 선정<br>
 keras패키지를 통한 모델 학습으로 긍정/부정 리뷰 판단(https://wikidocs.net/24559)<br>
