@@ -6,7 +6,7 @@
 #### 내용 요약
 selenium패키지를 통한 웹스크래핑(리뷰 수집) 후 데이터 전처리 후 csv파일로 저장<br>
 konlpy패키지의 okt.pos()함수를 사용하여 리뷰 토큰화, ntlk로 빈도수 상위 10000개 토큰 선정<br>
-keras패키지를 통한 모델 학습으로 긍정/부정 리뷰 판단<br>(https://wikidocs.net/24559)
+keras패키지를 통한 모델 학습으로 긍정/부정 리뷰 판단(https://wikidocs.net/24559)<br>
 folium패키지로 지도 위에 시각화<br><br>
 
 00.음식점 리뷰 감성 분석 데이터셋 수집.ipynb :<br>
